@@ -2,7 +2,7 @@
 
 body {
   margin: 0 auto;
-  /* background: black; */
+   background: black; 
 }
 
 .main_container {
@@ -255,7 +255,7 @@ video {
   position: absolute;
   z-index: 20;
   width: 100%;
-  top: 80%;
+  top: 75%;
   display: none;
 }
 
@@ -277,7 +277,8 @@ video {
 #background_bar_p {
   display: flex;
   align-items: center;
-  /* background-color: #282727; */
+  background-color: #282727;
+  opacity: 0.5;
   padding: 10px 6px 10px 6px;
   border-radius: 8px;
   vertical-align: bottom;
@@ -289,6 +290,7 @@ img {
   width: 50px;
   height: 50px;
   cursor: pointer;
+  color: white;
 }
 
 #progress_p_a,
