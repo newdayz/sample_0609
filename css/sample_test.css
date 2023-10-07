@@ -251,7 +251,22 @@ video {
   padding: 0;
 }
 
-#progress_bar {
+#progress_bar,
+#progress_bar_b,
+#progress_bar_c,
+#progress_bar_d,
+#progress_bar_e,
+#progress_bar_f,
+#progress_bar_g,
+#progress_bar_h,
+#progress_bar_i,
+#progress_bar_j,
+#progress_bar_k,
+#progress_bar_l,
+#progress_bar_m,
+#progress_bar_n,
+#progress_bar_o,
+#progress_bar_p {
   position: absolute;
   z-index: 20;
   width: 100%;

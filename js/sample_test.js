@@ -231,15 +231,13 @@ if (isVideoABox) {
       const windowHeight = document.documentElement.clientHeight;
       console.log(windowHeight);
 
-      const aspectRatio = 16 / 9; // 要素(Container)のアスペクト比
+      const aspectRatio = 16 / 9;
 
       if (windowWidth / windowHeight > aspectRatio) {
-        // ウィンドウの幅がアスペクト比よりも広い場合
         const newWidth = windowHeight * aspectRatio;
         Container.style.width = newWidth + "px";
         Container.style.height = windowHeight + "px";
       } else {
-        // ウィンドウの高さがアスペクト比よりも高い場合
         const newHeight = windowWidth / aspectRatio;
         Container.style.width = windowWidth + "px";
         Container.style.height = newHeight + "px";
@@ -247,8 +245,7 @@ if (isVideoABox) {
     }
 
     window.addEventListener("resize", resizeFix);
-    resizeFix(); // 初期化
-
+    resizeFix();
 
 
     btn_pause.addEventListener('click', () => {
@@ -344,8 +341,7 @@ if (isVideoABox) {
 
             VideoBElement.play();
             ClassB.style.zIndex = "290";
-            ProgressBarB.style.zIndex = "1";
-            ProgressBarB.style.display = "block";
+            ProgressBarB.style.zIndex = "291";
 
             console.log('button1をクリックしました');
           }
@@ -377,8 +373,7 @@ if (isVideoABox) {
 
             VideoCElement.play();
             ClassC.style.zIndex = "290";
-            ProgressBarC.style.zIndex = "1";
-            ProgressBarC.style.display = "block";
+            ProgressBarC.style.zIndex = "291";
 
             console.log('button2をクリックしました');
           }
@@ -397,11 +392,9 @@ if (isVideoABox) {
             ProgressBar.style.zIndex = "-29";
             ProgressBar.style.display = "none";
 
-
             VideoDElement.play();
             ClassD.style.zIndex = "290";
-            ProgressBarD.style.zIndex = "1";
-            ProgressBarD.style.display = "block";
+            ProgressBarD.style.zIndex = "291";
 
             if (VideoAElement.muted) {
               VideoDElement.muted = true;
@@ -433,8 +426,7 @@ if (isVideoABox) {
 
             VideoEElement.play();
             ClassE.style.zIndex = "290";
-            ProgressBarE.style.zIndex = "1";
-            ProgressBarE.style.display = "block";
+            ProgressBarE.style.zIndex = "291";
 
             if (VideoAElement.muted) {
               VideoEElement.muted = true;
@@ -464,10 +456,12 @@ if (isVideoABox) {
   });
 }
 
+const interactive_Videos = document.querySelector(".interactive_videos");
+
 // クローンB
 let ProgressBarB = ProgressBar.cloneNode(true);
 ProgressBarB.id = "progress_bar_b";
-Container.appendChild(ProgressBarB);
+interactive_Videos.appendChild(ProgressBarB);
 ProgressBarB.style.zIndex = "-1";
 ProgressBarB.style.display = "none";
 
@@ -502,6 +496,53 @@ let UnmuteBtnB = ContorolsSoundB.querySelector("#unmute");
 MuteBtnB.id = "mute_b";
 UnmuteBtnB.id = "unmute_b";
 
+VideoBElement.addEventListener("mouseover", () => {
+  ProgressBarB.style.display = "block";
+});
+
+VideoBElement.addEventListener("mouseout", () => {
+  ProgressBarB.style.display = "none";
+});
+
+ProgressBarB.addEventListener("mouseover", () => {
+  ProgressBarB.style.display = "block";
+});
+
+ProgressBarB.addEventListener("mouseout", () => {
+  ProgressBarB.style.display = "none";
+});
+
+buttonF.addEventListener("mouseover", () => {
+  ProgressBarB.style.display = "block";
+});
+
+buttonF.addEventListener("mouseout", () => {
+  ProgressBarB.style.display = "none";
+});
+
+buttonG.addEventListener("mouseover", () => {
+  ProgressBarB.style.display = "block";
+});
+
+buttonG.addEventListener("mouseout", () => {
+  ProgressBarB.style.display = "none";
+});
+
+back_B_A.addEventListener("mouseover", () => {
+  ProgressBarB.style.display = "block";
+});
+
+back_B_A.addEventListener("mouseout", () => {
+  ProgressBarB.style.display = "none";
+});
+
+document.addEventListener("touchstart", () => {
+  ProgressBarB.style.display = "block";
+
+  setTimeout(() => {
+    ProgressBarB.style.display = "none";
+  }, 3000);
+});
 
 let playtimerB = null;
 
@@ -614,8 +655,7 @@ if (isVideoBBox) {
 
             VideoFElement.play();
             ClassF.style.zIndex = "290";
-            ProgressBarF.style.zIndex = "1";
-            ProgressBarF.style.display = "block";
+            ProgressBarF.style.zIndex = "291";
 
             if (VideoBElement.muted) {
               VideoFElement.muted = true;
@@ -647,8 +687,7 @@ if (isVideoBBox) {
 
             VideoGElement.play();
             ClassG.style.zIndex = "290";
-            ProgressBarG.style.zIndex = "1";
-            ProgressBarG.style.display = "block";
+            ProgressBarG.style.zIndex = "291";
 
             if (VideoBElement.muted) {
               VideoGElement.muted = true;
@@ -690,8 +729,7 @@ if (isVideoBBox) {
 
             VideoAElement.play();
             ClassA.style.zIndex = "290";
-            ProgressBar.style.zIndex = "1";
-            ProgressBar.style.display = "block";
+            ProgressBar.style.zIndex = "291";
 
             console.log('button03をクリックしました');
           }
@@ -716,7 +754,7 @@ if (isVideoBBox) {
 
 let ProgressBarC = ProgressBar.cloneNode(true);
 ProgressBarC.id = "progress_bar_c";
-Container.appendChild(ProgressBarC);
+interactive_Videos.appendChild(ProgressBarC);
 ProgressBarC.style.zIndex = "-2";
 ProgressBarC.style.display = "none";
 
@@ -750,6 +788,54 @@ let MuteBtnC = ContorolsSoundC.querySelector("#mute");
 let UnmuteBtnC = ContorolsSoundC.querySelector("#unmute");
 MuteBtnC.id = "mute_c";
 UnmuteBtnC.id = "unmute_c";
+
+VideoCElement.addEventListener("mouseover", () => {
+  ProgressBarC.style.display = "block";
+});
+
+VideoCElement.addEventListener("mouseout", () => {
+  ProgressBarC.style.display = "none";
+});
+
+ProgressBarC.addEventListener("mouseover", () => {
+  ProgressBarC.style.display = "block";
+});
+
+ProgressBarC.addEventListener("mouseout", () => {
+  ProgressBarC.style.display = "none";
+});
+
+buttonH.addEventListener("mouseover", () => {
+  ProgressBarC.style.display = "block";
+});
+
+buttonH.addEventListener("mouseout", () => {
+  ProgressBarC.style.display = "none";
+});
+
+buttonI.addEventListener("mouseover", () => {
+  ProgressBarC.style.display = "block";
+});
+
+buttonI.addEventListener("mouseout", () => {
+  ProgressBarC.style.display = "none";
+});
+
+back_C_A.addEventListener("mouseover", () => {
+  ProgressBarC.style.display = "block";
+});
+
+back_C_A.addEventListener("mouseout", () => {
+  ProgressBarC.style.display = "none";
+});
+
+document.addEventListener("touchstart", () => {
+  ProgressBarC.style.display = "block";
+
+  setTimeout(() => {
+    ProgressBarC.style.display = "none";
+  }, 3000);
+});
 
 
 let playtimerC = null;
@@ -871,8 +957,7 @@ VideoCElement.addEventListener('loadeddata', () => {
 
           VideoHElement.play();
           ClassH.style.zIndex = "290";
-          ProgressBarH.style.zIndex = "1";
-          ProgressBarH.style.display = "block";
+          ProgressBarH.style.zIndex = "291";
 
           console.log('button01Cをクリックしました');
         }
@@ -904,8 +989,7 @@ VideoCElement.addEventListener('loadeddata', () => {
 
           VideoIElement.play();
           ClassI.style.zIndex = "290";
-          ProgressBarI.style.zIndex = "1";
-          ProgressBarI.style.display = "block";
+          ProgressBarI.style.zIndex = "291";
 
           console.log('button02Cをクリックしました');
         }
@@ -937,8 +1021,7 @@ VideoCElement.addEventListener('loadeddata', () => {
 
           VideoAElement.play();
           ClassA.style.zIndex = "290";
-          ProgressBar.style.zIndex = "1";
-          ProgressBar.style.display = "block";
+          ProgressBar.style.zIndex = "291";
 
           console.log('button03Cをクリックしました');
         }
@@ -963,7 +1046,7 @@ VideoCElement.addEventListener('loadeddata', () => {
 
 let ProgressBarD = ProgressBar.cloneNode(true);
 ProgressBarD.id = "progress_bar_d";
-Container.appendChild(ProgressBarD);
+interactive_Videos.appendChild(ProgressBarD);
 ProgressBarD.style.zIndex = "-3";
 ProgressBarD.style.display = "none";
 
@@ -997,6 +1080,62 @@ let MuteBtnD = ContorolsSoundD.querySelector("#mute");
 let UnmuteBtnD = ContorolsSoundD.querySelector("#unmute");
 MuteBtnD.id = "mute_d";
 UnmuteBtnD.id = "unmute_d";
+
+VideoDElement.addEventListener("mouseover", () => {
+  ProgressBarD.style.display = "block";
+});
+
+VideoDElement.addEventListener("mouseout", () => {
+  ProgressBarD.style.display = "none";
+});
+
+ProgressBarD.addEventListener("mouseover", () => {
+  ProgressBarD.style.display = "block";
+});
+
+ProgressBarD.addEventListener("mouseout", () => {
+  ProgressBarD.style.display = "none";
+});
+
+buttonJ.addEventListener("mouseover", () => {
+  ProgressBarD.style.display = "block";
+});
+
+buttonJ.addEventListener("mouseout", () => {
+  ProgressBarD.style.display = "none";
+});
+
+buttonK.addEventListener("mouseover", () => {
+  ProgressBarD.style.display = "block";
+});
+
+buttonK.addEventListener("mouseout", () => {
+  ProgressBarD.style.display = "none";
+});
+
+buttonL.addEventListener("mouseover", () => {
+  ProgressBarD.style.display = "block";
+});
+
+buttonL.addEventListener("mouseout", () => {
+  ProgressBarD.style.display = "none";
+});
+
+back_D_A.addEventListener("mouseover", () => {
+  ProgressBarD.style.display = "block";
+});
+
+back_D_A.addEventListener("mouseout", () => {
+  ProgressBarD.style.display = "none";
+});
+
+document.addEventListener("touchstart", () => {
+  ProgressBarD.style.display = "block";
+
+  setTimeout(() => {
+    ProgressBarD.style.display = "none";
+  }, 3000);
+});
 
 let playtimerD = null;
 
@@ -1116,8 +1255,7 @@ VideoDElement.addEventListener('loadeddata', () => {
 
           VideoJElement.play();
           ClassJ.style.zIndex = "290";
-          ProgressBarJ.style.zIndex = "1";
-          ProgressBarJ.style.display = "block";
+          ProgressBarJ.style.zIndex = "291";
 
           console.log('button1Dをクリックしました');
         }
@@ -1149,8 +1287,7 @@ VideoDElement.addEventListener('loadeddata', () => {
 
           VideoKElement.play();
           ClassK.style.zIndex = "290";
-          ProgressBarK.style.zIndex = "1";
-          ProgressBarK.style.display = "block";
+          ProgressBarK.style.zIndex = "291";
 
           console.log('button2Dをクリックしました');
         }
@@ -1182,8 +1319,7 @@ VideoDElement.addEventListener('loadeddata', () => {
 
           VideoLElement.play();
           ClassL.style.zIndex = "290";
-          ProgressBarL.style.zIndex = "1";
-          ProgressBarL.style.display = "block";
+          ProgressBarL.style.zIndex = "291";
 
           console.log('button3Dをクリックしました');
         }
@@ -1215,8 +1351,7 @@ VideoDElement.addEventListener('loadeddata', () => {
 
           VideoAElement.play();
           ClassA.style.zIndex = "290";
-          ProgressBar.style.zIndex = "1";
-          ProgressBar.style.display = "block";
+          ProgressBar.style.zIndex = "291";
 
           console.log('button4Dをクリックしました');
         }
@@ -1241,7 +1376,7 @@ VideoDElement.addEventListener('loadeddata', () => {
 
 let ProgressBarE = ProgressBar.cloneNode(true);
 ProgressBarE.id = "progress_bar_e";
-Container.appendChild(ProgressBarE);
+interactive_Videos.appendChild(ProgressBarE);
 ProgressBarE.style.zIndex = "-4";
 ProgressBarE.style.display = "none";
 
@@ -1275,6 +1410,46 @@ let MuteBtnE = ContorolsSoundE.querySelector("#mute");
 let UnmuteBtnE = ContorolsSoundE.querySelector("#unmute");
 MuteBtnE.id = "mute_e";
 UnmuteBtnE.id = "unmute_e";
+
+VideoEElement.addEventListener("mouseover", () => {
+  ProgressBarE.style.display = "block";
+});
+
+VideoEElement.addEventListener("mouseout", () => {
+  ProgressBarE.style.display = "none";
+});
+
+ProgressBarE.addEventListener("mouseover", () => {
+  ProgressBarE.style.display = "block";
+});
+
+ProgressBarE.addEventListener("mouseout", () => {
+  ProgressBarE.style.display = "none";
+});
+
+buttonE_Info.addEventListener("mouseover", () => {
+  ProgressBarE.style.display = "block";
+});
+
+buttonE_Info.addEventListener("mouseout", () => {
+  ProgressBarE.style.display = "none";
+});
+
+back_E_A.addEventListener("mouseover", () => {
+  ProgressBarE.style.display = "block";
+});
+
+back_E_A.addEventListener("mouseout", () => {
+  ProgressBarE.style.display = "none";
+});
+
+document.addEventListener("touchstart", () => {
+  ProgressBarE.style.display = "block";
+
+  setTimeout(() => {
+    ProgressBarE.style.display = "none";
+  }, 3000);
+});
 
 let playtimerE = null;
 
@@ -1414,8 +1589,7 @@ if (isVideoBoxE) {
 
             VideoAElement.play();
             ClassA.style.zIndex = "290";
-            ProgressBar.style.zIndex = "1";
-            ProgressBar.style.display = "block";
+            ProgressBar.style.zIndex = "291";
 
             console.log('back_E_Aをクリックしました');
           }
@@ -1441,7 +1615,7 @@ if (isVideoBoxE) {
 
 let ProgressBarF = ProgressBar.cloneNode(true);
 ProgressBarF.id = "progress_bar_f";
-Container.appendChild(ProgressBarF);
+interactive_Videos.appendChild(ProgressBarF);
 ProgressBarF.style.zIndex = "-5";
 ProgressBarF.style.display = "none";
 
@@ -1476,6 +1650,53 @@ let UnmuteBtnF = ContorolsSoundF.querySelector("#unmute");
 MuteBtnF.id = "mute_f";
 UnmuteBtnF.id = "unmute_f";
 
+VideoFElement.addEventListener("mouseover", () => {
+  ProgressBarF.style.display = "block";
+});
+
+VideoFElement.addEventListener("mouseout", () => {
+  ProgressBarF.style.display = "none";
+});
+
+ProgressBarF.addEventListener("mouseover", () => {
+  ProgressBarF.style.display = "block";
+});
+
+ProgressBarF.addEventListener("mouseout", () => {
+  ProgressBarF.style.display = "none";
+});
+
+buttonF_Info.addEventListener("mouseover", () => {
+  ProgressBarF.style.display = "block";
+});
+
+buttonF_Info.addEventListener("mouseout", () => {
+  ProgressBarF.style.display = "none";
+});
+
+opening_F_A.addEventListener("mouseover", () => {
+  ProgressBarF.style.display = "block";
+});
+
+opening_F_A.addEventListener("mouseout", () => {
+  ProgressBarF.style.display = "none";
+});
+
+back_F_B.addEventListener("mouseover", () => {
+  ProgressBarF.style.display = "block";
+});
+
+back_F_B.addEventListener("mouseout", () => {
+  ProgressBarF.style.display = "none";
+});
+
+document.addEventListener("touchstart", () => {
+  ProgressBarF.style.display = "block";
+
+  setTimeout(() => {
+    ProgressBarF.style.display = "none";
+  }, 3000);
+});
 
 let playtimerF = null;
 
@@ -1620,8 +1841,7 @@ if (isVideoBoxF) {
 
             VideoAElement.play();
             ClassA.style.zIndex = "290";
-            ProgressBar.style.zIndex = "1";
-            ProgressBar.style.display = "block";
+            ProgressBar.style.zIndex = "291";
 
             console.log('opening_F_Aをクリックしました');
           }
@@ -1656,8 +1876,7 @@ if (isVideoBoxF) {
             UnmuteBtnB.style.display = "block";
             MuteBtnB.style.display = "none";
             ClassB.style.zIndex = "290";
-            ProgressBarB.style.zIndex = "1";
-            ProgressBarB.style.display = "block";
+            ProgressBarB.style.zIndex = "291";
 
             console.log('back_F_Bをクリックしました');
           }
@@ -1682,7 +1901,7 @@ if (isVideoBoxF) {
 
 let ProgressBarG = ProgressBar.cloneNode(true);
 ProgressBarG.id = "progress_bar_g";
-Container.appendChild(ProgressBarG);
+interactive_Videos.appendChild(ProgressBarG);
 ProgressBarG.style.zIndex = "-6";
 ProgressBarG.style.display = "none";
 
@@ -1717,6 +1936,53 @@ let UnmuteBtnG = ContorolsSoundG.querySelector("#unmute");
 MuteBtnG.id = "mute_g";
 UnmuteBtnG.id = "unmute_g";
 
+VideoGElement.addEventListener("mouseover", () => {
+  ProgressBarG.style.display = "block";
+});
+
+VideoGElement.addEventListener("mouseout", () => {
+  ProgressBarG.style.display = "none";
+});
+
+ProgressBarG.addEventListener("mouseover", () => {
+  ProgressBarG.style.display = "block";
+});
+
+ProgressBarG.addEventListener("mouseout", () => {
+  ProgressBarG.style.display = "none";
+});
+
+buttonG_Info.addEventListener("mouseover", () => {
+  ProgressBarG.style.display = "block";
+});
+
+buttonG_Info.addEventListener("mouseout", () => {
+  ProgressBarG.style.display = "none";
+});
+
+opening_G_A.addEventListener("mouseover", () => {
+  ProgressBarG.style.display = "block";
+});
+
+opening_G_A.addEventListener("mouseout", () => {
+  ProgressBarG.style.display = "none";
+});
+
+back_G_B.addEventListener("mouseover", () => {
+  ProgressBarG.style.display = "block";
+});
+
+back_G_B.addEventListener("mouseout", () => {
+  ProgressBarG.style.display = "none";
+});
+
+document.addEventListener("touchstart", () => {
+  ProgressBarG.style.display = "block";
+
+  setTimeout(() => {
+    ProgressBarG.style.display = "none";
+  }, 3000);
+});
 
 let playtimerG = null;
 
@@ -1861,8 +2127,7 @@ if (isVideoBoxG) {
 
             VideoAElement.play();
             ClassA.style.zIndex = "290";
-            ProgressBar.style.zIndex = "1";
-            ProgressBar.style.display = "block";
+            ProgressBar.style.zIndex = "291";
 
             console.log('opening_G_Aをクリックしました');
           }
@@ -1894,8 +2159,7 @@ if (isVideoBoxG) {
 
             VideoBElement.play();
             ClassB.style.zIndex = "290";
-            ProgressBarB.style.zIndex = "1";
-            ProgressBarB.style.display = "block";
+            ProgressBarB.style.zIndex = "291";
 
             console.log('back_G_Bをクリックしました');
           }
@@ -1919,7 +2183,7 @@ if (isVideoBoxG) {
 // Insurance H
 let ProgressBarH = ProgressBar.cloneNode(true);
 ProgressBarH.id = "progress_bar_h";
-Container.appendChild(ProgressBarH);
+interactive_Videos.appendChild(ProgressBarH);
 ProgressBarH.style.zIndex = "-7";
 ProgressBarH.style.display = "none";
 
@@ -1953,6 +2217,54 @@ let MuteBtnH = ContorolsSoundH.querySelector("#mute");
 let UnmuteBtnH = ContorolsSoundH.querySelector("#unmute");
 MuteBtnH.id = "mute_h";
 UnmuteBtnH.id = "unmute_h";
+
+VideoHElement.addEventListener("mouseover", () => {
+  ProgressBarH.style.display = "block";
+});
+
+VideoHElement.addEventListener("mouseout", () => {
+  ProgressBarH.style.display = "none";
+});
+
+ProgressBarH.addEventListener("mouseover", () => {
+  ProgressBarH.style.display = "block";
+});
+
+ProgressBarH.addEventListener("mouseout", () => {
+  ProgressBarH.style.display = "none";
+});
+
+buttonM.addEventListener("mouseover", () => {
+  ProgressBarH.style.display = "block";
+});
+
+buttonM.addEventListener("mouseout", () => {
+  ProgressBarH.style.display = "none";
+});
+
+buttonN.addEventListener("mouseover", () => {
+  ProgressBarH.style.display = "block";
+});
+
+buttonN.addEventListener("mouseout", () => {
+  ProgressBarH.style.display = "none";
+});
+
+back_H_C.addEventListener("mouseover", () => {
+  ProgressBarH.style.display = "block";
+});
+
+back_H_C.addEventListener("mouseout", () => {
+  ProgressBarH.style.display = "none";
+});
+
+document.addEventListener("touchstart", () => {
+  ProgressBarH.style.display = "block";
+
+  setTimeout(() => {
+    ProgressBarH.style.display = "none";
+  }, 3000);
+});
 
 let playtimerH = null;
 
@@ -2079,8 +2391,7 @@ if (isVideoBoxH) {
 
             VideoMElement.play();
             ClassM.style.zIndex = "290";
-            ProgressBarM.style.zIndex = "1";
-            ProgressBarM.style.display = "block";
+            ProgressBarM.style.zIndex = "291";
 
             console.log('buttonMをクリックしました');
           }
@@ -2112,8 +2423,7 @@ if (isVideoBoxH) {
 
             VideoNElement.play();
             ClassN.style.zIndex = "290";
-            ProgressBarN.style.zIndex = "1";
-            ProgressBarN.style.display = "block";
+            ProgressBarN.style.zIndex = "291";
 
             console.log('buttonNをクリックしました');
           }
@@ -2145,8 +2455,7 @@ if (isVideoBoxH) {
 
             VideoCElement.play();
             ClassC.style.zIndex = "290";
-            ProgressBarC.style.zIndex = "1";
-            ProgressBarC.style.display = "block";
+            ProgressBarC.style.zIndex = "291";
 
             console.log('buttonHをクリックしました');
           }
@@ -2171,7 +2480,7 @@ if (isVideoBoxH) {
 
 let ProgressBarI = ProgressBar.cloneNode(true);
 ProgressBarI.id = "progress_bar_i";
-Container.appendChild(ProgressBarI);
+interactive_Videos.appendChild(ProgressBarI);
 ProgressBarI.style.zIndex = "-8";
 ProgressBarI.style.display = "none";
 
@@ -2205,6 +2514,54 @@ let MuteBtnI = ContorolsSoundI.querySelector("#mute");
 let UnmuteBtnI = ContorolsSoundI.querySelector("#unmute");
 MuteBtnI.id = "mute_i";
 UnmuteBtnI.id = "unmute_i";
+
+VideoIElement.addEventListener("mouseover", () => {
+  ProgressBarI.style.display = "block";
+});
+
+VideoIElement.addEventListener("mouseout", () => {
+  ProgressBarI.style.display = "none";
+});
+
+ProgressBarI.addEventListener("mouseover", () => {
+  ProgressBarI.style.display = "block";
+});
+
+ProgressBarI.addEventListener("mouseout", () => {
+  ProgressBarI.style.display = "none";
+});
+
+buttonO.addEventListener("mouseover", () => {
+  ProgressBarI.style.display = "block";
+});
+
+buttonO.addEventListener("mouseout", () => {
+  ProgressBarI.style.display = "none";
+});
+
+buttonP.addEventListener("mouseover", () => {
+  ProgressBarI.style.display = "block";
+});
+
+buttonP.addEventListener("mouseout", () => {
+  ProgressBarI.style.display = "none";
+});
+
+back_I_C.addEventListener("mouseover", () => {
+  ProgressBarI.style.display = "block";
+});
+
+back_I_C.addEventListener("mouseout", () => {
+  ProgressBarI.style.display = "none";
+});
+
+document.addEventListener("touchstart", () => {
+  ProgressBarI.style.display = "block";
+
+  setTimeout(() => {
+    ProgressBarI.style.display = "none";
+  }, 3000);
+});
 
 let playtimerI = null;
 
@@ -2331,8 +2688,7 @@ if (isVideoBoxI) {
 
             VideoOElement.play();
             ClassO.style.zIndex = "290";
-            ProgressBarO.style.zIndex = "1";
-            ProgressBarO.style.display = "block";
+            ProgressBarO.style.zIndex = "291";
 
             console.log('buttonOをクリックしました');
           }
@@ -2364,8 +2720,7 @@ if (isVideoBoxI) {
 
             VideoPElement.play();
             ClassP.style.zIndex = "290";
-            ProgressBarP.style.zIndex = "1";
-            ProgressBarP.style.display = "block";
+            ProgressBarP.style.zIndex = "291";
 
             console.log('buttonPをクリックしました');
           }
@@ -2397,8 +2752,7 @@ if (isVideoBoxI) {
 
             VideoCElement.play();
             ClassC.style.zIndex = "290";
-            ProgressBarC.style.zIndex = "1";
-            ProgressBarC.style.display = "block";
+            ProgressBarC.style.zIndex = "291";
 
             console.log('button03をクリックしました');
           }
@@ -2423,7 +2777,7 @@ if (isVideoBoxI) {
 
 let ProgressBarJ = ProgressBar.cloneNode(true);
 ProgressBarJ.id = "progress_bar_j";
-Container.appendChild(ProgressBarJ);
+interactive_Videos.appendChild(ProgressBarJ);
 ProgressBarJ.style.zIndex = "-9";
 ProgressBarJ.style.display = "none";
 
@@ -2457,6 +2811,54 @@ let MuteBtnJ = ContorolsSoundJ.querySelector("#mute");
 let UnmuteBtnJ = ContorolsSoundJ.querySelector("#unmute");
 MuteBtnJ.id = "mute_j";
 UnmuteBtnJ.id = "unmute_j";
+
+VideoJElement.addEventListener("mouseover", () => {
+  ProgressBarJ.style.display = "block";
+});
+
+VideoJElement.addEventListener("mouseout", () => {
+  ProgressBarJ.style.display = "none";
+});
+
+ProgressBarJ.addEventListener("mouseover", () => {
+  ProgressBarJ.style.display = "block";
+});
+
+ProgressBarJ.addEventListener("mouseout", () => {
+  ProgressBarJ.style.display = "none";
+});
+
+buttonJ_Info.addEventListener("mouseover", () => {
+  ProgressBarJ.style.display = "block";
+});
+
+buttonJ_Info.addEventListener("mouseout", () => {
+  ProgressBarJ.style.display = "none";
+});
+
+opening_J_A.addEventListener("mouseover", () => {
+  ProgressBarJ.style.display = "block";
+});
+
+opening_J_A.addEventListener("mouseout", () => {
+  ProgressBarJ.style.display = "none";
+});
+
+back_J_D.addEventListener("mouseover", () => {
+  ProgressBarJ.style.display = "block";
+});
+
+back_J_D.addEventListener("mouseout", () => {
+  ProgressBarJ.style.display = "none";
+});
+
+document.addEventListener("touchstart", () => {
+  ProgressBarJ.style.display = "block";
+
+  setTimeout(() => {
+    ProgressBarJ.style.display = "none";
+  }, 3000);
+});
 
 let playtimerJ = null;
 
@@ -2596,8 +2998,7 @@ if (isVideoBoxJ) {
 
             VideoAElement.play();
             ClassA.style.zIndex = "290";
-            ProgressBar.style.zIndex = "1";
-            ProgressBar.style.display = "block";
+            ProgressBar.style.zIndex = "291";
 
             console.log('opening_J_A');
           }
@@ -2629,8 +3030,7 @@ if (isVideoBoxJ) {
 
             VideoDElement.play();
             ClassD.style.zIndex = "290";
-            ProgressBarD.style.zIndex = "1";
-            ProgressBarD.style.display = "block";
+            ProgressBarD.style.zIndex = "291";
 
             console.log('back_J_D');
           }
@@ -2656,7 +3056,7 @@ if (isVideoBoxJ) {
 
 let ProgressBarK = ProgressBar.cloneNode(true);
 ProgressBarK.id = "progress_bar_k";
-Container.appendChild(ProgressBarK);
+interactive_Videos.appendChild(ProgressBarK);
 ProgressBarK.style.zIndex = "-10";
 ProgressBarK.style.display = "none";
 
@@ -2690,6 +3090,54 @@ let MuteBtnK = ContorolsSoundK.querySelector("#mute");
 let UnmuteBtnK = ContorolsSoundK.querySelector("#unmute");
 MuteBtnK.id = "mute_k";
 UnmuteBtnK.id = "unmute_k";
+
+VideoKElement.addEventListener("mouseover", () => {
+  ProgressBarK.style.display = "block";
+});
+
+VideoKElement.addEventListener("mouseout", () => {
+  ProgressBarK.style.display = "none";
+});
+
+ProgressBarK.addEventListener("mouseover", () => {
+  ProgressBarK.style.display = "block";
+});
+
+ProgressBarK.addEventListener("mouseout", () => {
+  ProgressBarK.style.display = "none";
+});
+
+buttonK_Info.addEventListener("mouseover", () => {
+  ProgressBarK.style.display = "block";
+});
+
+buttonK_Info.addEventListener("mouseout", () => {
+  ProgressBarK.style.display = "none";
+});
+
+opening_K_A.addEventListener("mouseover", () => {
+  ProgressBarK.style.display = "block";
+});
+
+opening_K_A.addEventListener("mouseout", () => {
+  ProgressBarK.style.display = "none";
+});
+
+back_K_D.addEventListener("mouseover", () => {
+  ProgressBarK.style.display = "block";
+});
+
+back_K_D.addEventListener("mouseout", () => {
+  ProgressBarK.style.display = "none";
+});
+
+document.addEventListener("touchstart", () => {
+  ProgressBarK.style.display = "block";
+
+  setTimeout(() => {
+    ProgressBarK.style.display = "none";
+  }, 3000);
+});
 
 let playtimerK = null;
 
@@ -2832,8 +3280,7 @@ if (isVideoBoxK) {
 
             VideoAElement.play();
             ClassA.style.zIndex = "290";
-            ProgressBar.style.zIndex = "1";
-            ProgressBar.style.display = "block";
+            ProgressBar.style.zIndex = "291";
 
             console.log('opening_K_A');
           }
@@ -2865,8 +3312,7 @@ if (isVideoBoxK) {
 
             VideoDElement.play();
             ClassD.style.zIndex = "290";
-            ProgressBarD.style.zIndex = "1";
-            ProgressBarD.style.display = "block";
+            ProgressBarD.style.zIndex = "291";
 
             console.log('back_K_D');
           }
@@ -2892,7 +3338,7 @@ if (isVideoBoxK) {
 
 let ProgressBarL = ProgressBar.cloneNode(true);
 ProgressBarL.id = "progress_bar_l";
-Container.appendChild(ProgressBarL);
+interactive_Videos.appendChild(ProgressBarL);
 ProgressBarL.style.zIndex = "-11";
 ProgressBarL.style.display = "none";
 
@@ -2926,6 +3372,54 @@ let MuteBtnL = ContorolsSoundL.querySelector("#mute");
 let UnmuteBtnL = ContorolsSoundL.querySelector("#unmute");
 MuteBtnL.id = "mute_l";
 UnmuteBtnL.id = "unmute_l";
+
+VideoLElement.addEventListener("mouseover", () => {
+  ProgressBarL.style.display = "block";
+});
+
+VideoLElement.addEventListener("mouseout", () => {
+  ProgressBarL.style.display = "none";
+});
+
+ProgressBarL.addEventListener("mouseover", () => {
+  ProgressBarL.style.display = "block";
+});
+
+ProgressBarL.addEventListener("mouseout", () => {
+  ProgressBarL.style.display = "none";
+});
+
+buttonL_Info.addEventListener("mouseover", () => {
+  ProgressBarL.style.display = "block";
+});
+
+buttonL_Info.addEventListener("mouseout", () => {
+  ProgressBarL.style.display = "none";
+});
+
+opening_L_A.addEventListener("mouseover", () => {
+  ProgressBarL.style.display = "block";
+});
+
+opening_L_A.addEventListener("mouseout", () => {
+  ProgressBarL.style.display = "none";
+});
+
+back_L_D.addEventListener("mouseover", () => {
+  ProgressBarL.style.display = "block";
+});
+
+back_L_D.addEventListener("mouseout", () => {
+  ProgressBarL.style.display = "none";
+});
+
+document.addEventListener("touchstart", () => {
+  ProgressBarL.style.display = "block";
+
+  setTimeout(() => {
+    ProgressBarL.style.display = "none";
+  }, 3000);
+});
 
 let playtimerL = null;
 
@@ -3063,8 +3557,7 @@ if (isVideoBoxL) {
 
             VideoAElement.play();
             ClassA.style.zIndex = "290";
-            ProgressBar.style.zIndex = "1";
-            ProgressBar.style.display = "block";
+            ProgressBar.style.zIndex = "291";
 
             console.log('opening_L_A');
           }
@@ -3096,8 +3589,7 @@ if (isVideoBoxL) {
 
             VideoDElement.play();
             ClassD.style.zIndex = "290";
-            ProgressBarD.style.zIndex = "1";
-            ProgressBarD.style.display = "block";
+            ProgressBarD.style.zIndex = "291";
 
             console.log('back_L_D');
           }
@@ -3123,7 +3615,7 @@ if (isVideoBoxL) {
 
 let ProgressBarM = ProgressBar.cloneNode(true);
 ProgressBarM.id = "progress_bar_m";
-Container.appendChild(ProgressBarM);
+interactive_Videos.appendChild(ProgressBarM);
 ProgressBarM.style.zIndex = "-12";
 ProgressBarM.style.display = "none";
 
@@ -3157,6 +3649,54 @@ let MuteBtnM = ContorolsSoundM.querySelector("#mute");
 let UnmuteBtnM = ContorolsSoundM.querySelector("#unmute");
 MuteBtnM.id = "mute_m";
 UnmuteBtnM.id = "unmute_m";
+
+VideoMElement.addEventListener("mouseover", () => {
+  ProgressBarM.style.display = "block";
+});
+
+VideoMElement.addEventListener("mouseout", () => {
+  ProgressBarM.style.display = "none";
+});
+
+ProgressBarM.addEventListener("mouseover", () => {
+  ProgressBarM.style.display = "block";
+});
+
+ProgressBarM.addEventListener("mouseout", () => {
+  ProgressBarM.style.display = "none";
+});
+
+buttonM_Info.addEventListener("mouseover", () => {
+  ProgressBarM.style.display = "block";
+});
+
+buttonM_Info.addEventListener("mouseout", () => {
+  ProgressBarM.style.display = "none";
+});
+
+opening_M_A.addEventListener("mouseover", () => {
+  ProgressBarM.style.display = "block";
+});
+
+opening_M_A.addEventListener("mouseout", () => {
+  ProgressBarM.style.display = "none";
+});
+
+back_M_H.addEventListener("mouseover", () => {
+  ProgressBarM.style.display = "block";
+});
+
+back_M_H.addEventListener("mouseout", () => {
+  ProgressBarM.style.display = "none";
+});
+
+document.addEventListener("touchstart", () => {
+  ProgressBarM.style.display = "block";
+
+  setTimeout(() => {
+    ProgressBarM.style.display = "none";
+  }, 3000);
+});
 
 let playtimerM = null;
 
@@ -3299,8 +3839,7 @@ if (isVideoBoxM) {
 
             VideoAElement.play();
             ClassA.style.zIndex = "290";
-            ProgressBar.style.zIndex = "1";
-            ProgressBar.style.display = "block";
+            ProgressBar.style.zIndex = "291";
 
             console.log('opening_M_A');
           }
@@ -3332,8 +3871,7 @@ if (isVideoBoxM) {
 
             VideoHElement.play();
             ClassH.style.zIndex = "290";
-            ProgressBarH.style.zIndex = "1";
-            ProgressBarH.style.display = "block";
+            ProgressBarH.style.zIndex = "291";
 
             console.log('back_M_H');
           }
@@ -3359,7 +3897,7 @@ if (isVideoBoxM) {
 
 let ProgressBarN = ProgressBar.cloneNode(true);
 ProgressBarN.id = "progress_bar_n";
-Container.appendChild(ProgressBarN);
+interactive_Videos.appendChild(ProgressBarN);
 ProgressBarN.style.zIndex = "-13";
 ProgressBarN.style.display = "none";
 
@@ -3393,6 +3931,54 @@ let MuteBtnN = ContorolsSoundN.querySelector("#mute");
 let UnmuteBtnN = ContorolsSoundN.querySelector("#unmute");
 MuteBtnN.id = "mute_n";
 UnmuteBtnN.id = "unmute_n";
+
+VideoNElement.addEventListener("mouseover", () => {
+  ProgressBarN.style.display = "block";
+});
+
+VideoNElement.addEventListener("mouseout", () => {
+  ProgressBarN.style.display = "none";
+});
+
+ProgressBarN.addEventListener("mouseover", () => {
+  ProgressBarN.style.display = "block";
+});
+
+ProgressBarN.addEventListener("mouseout", () => {
+  ProgressBarN.style.display = "none";
+});
+
+buttonN_Info.addEventListener("mouseover", () => {
+  ProgressBarN.style.display = "block";
+});
+
+buttonN_Info.addEventListener("mouseout", () => {
+  ProgressBarN.style.display = "none";
+});
+
+opening_N_A.addEventListener("mouseover", () => {
+  ProgressBarN.style.display = "block";
+});
+
+opening_N_A.addEventListener("mouseout", () => {
+  ProgressBarN.style.display = "none";
+});
+
+back_N_H.addEventListener("mouseover", () => {
+  ProgressBarN.style.display = "block";
+});
+
+back_N_H.addEventListener("mouseout", () => {
+  ProgressBarN.style.display = "none";
+});
+
+document.addEventListener("touchstart", () => {
+  ProgressBarN.style.display = "block";
+
+  setTimeout(() => {
+    ProgressBarN.style.display = "none";
+  }, 3000);
+});
 
 let playtimerN = null;
 
@@ -3535,8 +4121,7 @@ if (isVideoBoxN) {
 
             VideoAElement.play();
             ClassA.style.zIndex = "290";
-            ProgressBar.style.zIndex = "1";
-            ProgressBar.style.display = "block";
+            ProgressBar.style.zIndex = "291";
 
             console.log('opening_N_A');
           }
@@ -3568,8 +4153,7 @@ if (isVideoBoxN) {
 
             VideoHElement.play();
             ClassH.style.zIndex = "290";
-            ProgressBarH.style.zIndex = "1";
-            ProgressBarH.style.display = "block";
+            ProgressBarH.style.zIndex = "291";
 
             console.log('back_N_H');
           }
@@ -3595,7 +4179,7 @@ if (isVideoBoxN) {
 
 let ProgressBarO = ProgressBar.cloneNode(true);
 ProgressBarO.id = "progress_bar_o";
-Container.appendChild(ProgressBarO);
+interactive_Videos.appendChild(ProgressBarO);
 ProgressBarO.style.zIndex = "-14";
 ProgressBarO.style.display = "none";
 
@@ -3629,6 +4213,54 @@ let MuteBtnO = ContorolsSoundO.querySelector("#mute");
 let UnmuteBtnO = ContorolsSoundO.querySelector("#unmute");
 MuteBtnO.id = "mute_o";
 UnmuteBtnO.id = "unmute_o";
+
+VideoOElement.addEventListener("mouseover", () => {
+  ProgressBarO.style.display = "block";
+});
+
+VideoOElement.addEventListener("mouseout", () => {
+  ProgressBarO.style.display = "none";
+});
+
+ProgressBarO.addEventListener("mouseover", () => {
+  ProgressBarO.style.display = "block";
+});
+
+ProgressBarO.addEventListener("mouseout", () => {
+  ProgressBarO.style.display = "none";
+});
+
+buttonO_Info.addEventListener("mouseover", () => {
+  ProgressBarO.style.display = "block";
+});
+
+buttonO_Info.addEventListener("mouseout", () => {
+  ProgressBarO.style.display = "none";
+});
+
+opening_O_A.addEventListener("mouseover", () => {
+  ProgressBarO.style.display = "block";
+});
+
+opening_O_A.addEventListener("mouseout", () => {
+  ProgressBarO.style.display = "none";
+});
+
+back_O_I.addEventListener("mouseover", () => {
+  ProgressBarO.style.display = "block";
+});
+
+back_O_I.addEventListener("mouseout", () => {
+  ProgressBarO.style.display = "none";
+});
+
+document.addEventListener("touchstart", () => {
+  ProgressBarO.style.display = "block";
+
+  setTimeout(() => {
+    ProgressBarO.style.display = "none";
+  }, 3000);
+});
 
 let playtimerO = null;
 
@@ -3771,8 +4403,7 @@ if (isVideoBoxO) {
 
             VideoAElement.play();
             ClassA.style.zIndex = "290";
-            ProgressBar.style.zIndex = "1";
-            ProgressBar.style.display = "block";
+            ProgressBar.style.zIndex = "291";
 
             console.log('opening_O_A');
           }
@@ -3804,8 +4435,7 @@ if (isVideoBoxO) {
 
             VideoIElement.play();
             ClassI.style.zIndex = "290";
-            ProgressBarI.style.zIndex = "1";
-            ProgressBarI.style.display = "block";
+            ProgressBarI.style.zIndex = "291";
 
             console.log('back_O_I');
           }
@@ -3831,7 +4461,7 @@ if (isVideoBoxO) {
 
 let ProgressBarP = ProgressBar.cloneNode(true);
 ProgressBarP.id = "progress_bar_p";
-Container.appendChild(ProgressBarP);
+interactive_Videos.appendChild(ProgressBarP);
 ProgressBarP.style.zIndex = "-15";
 ProgressBarP.style.display = "none";
 
@@ -3865,6 +4495,54 @@ let MuteBtnP = ContorolsSoundP.querySelector("#mute");
 let UnmuteBtnP = ContorolsSoundP.querySelector("#unmute");
 MuteBtnP.id = "mute_p";
 UnmuteBtnP.id = "unmute_p";
+
+VideoPElement.addEventListener("mouseover", () => {
+  ProgressBarP.style.display = "block";
+});
+
+VideoPElement.addEventListener("mouseout", () => {
+  ProgressBarP.style.display = "none";
+});
+
+ProgressBarP.addEventListener("mouseover", () => {
+  ProgressBarP.style.display = "block";
+});
+
+ProgressBarP.addEventListener("mouseout", () => {
+  ProgressBarP.style.display = "none";
+});
+
+buttonP_Info.addEventListener("mouseover", () => {
+  ProgressBarP.style.display = "block";
+});
+
+buttonP_Info.addEventListener("mouseout", () => {
+  ProgressBarP.style.display = "none";
+});
+
+opening_P_A.addEventListener("mouseover", () => {
+  ProgressBarP.style.display = "block";
+});
+
+opening_P_A.addEventListener("mouseout", () => {
+  ProgressBarP.style.display = "none";
+});
+
+back_P_I.addEventListener("mouseover", () => {
+  ProgressBarP.style.display = "block";
+});
+
+back_P_I.addEventListener("mouseout", () => {
+  ProgressBarP.style.display = "none";
+});
+
+document.addEventListener("touchstart", () => {
+  ProgressBarP.style.display = "block";
+
+  setTimeout(() => {
+    ProgressBarP.style.display = "none";
+  }, 3000);
+});
 
 let playtimerP = null;
 
@@ -4007,8 +4685,7 @@ if (isVideoBoxP) {
 
             VideoAElement.play();
             ClassA.style.zIndex = "290";
-            ProgressBar.style.zIndex = "1";
-            ProgressBar.style.display = "block";
+            ProgressBar.style.zIndex = "291";
 
             console.log('opening_P_A');
           }
@@ -4040,8 +4717,7 @@ if (isVideoBoxP) {
 
             VideoIElement.play();
             ClassI.style.zIndex = "290";
-            ProgressBarI.style.zIndex = "1";
-            ProgressBarI.style.display = "block";
+            ProgressBarI.style.zIndex = "291";
 
             console.log('back_P_I');
           }
