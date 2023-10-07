@@ -536,7 +536,7 @@ back_B_A.addEventListener("mouseout", () => {
   ProgressBarB.style.display = "none";
 });
 
-document.addEventListener("touchstart", () => {
+VideoBElement.addEventListener("touchstart", () => {
   ProgressBarB.style.display = "block";
 
   setTimeout(() => {
