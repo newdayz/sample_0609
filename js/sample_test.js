@@ -225,10 +225,10 @@ if (isVideoABox) {
     end_position.textContent = `${formattedDuration}`;
 
     function resizeFix() {
-      const windowWidth = window.innerWidth;
+      const windowWidth = document.documentElement.clientWidth;
       console.log(window.innerWidth);
       console.log(windowWidth);
-      const windowHeight = window.innerHeight;
+      const windowHeight = document.documentElement.clientHeight;
       console.log(windowHeight);
 
       const aspectRatio = 16 / 9; // 要素(Container)のアスペクト比
