@@ -171,18 +171,24 @@ buttonE.addEventListener("mouseout", () => {
   ProgressBar.style.display = "none";
 });
 
-// document.addEventListener("touchstart", () => {
-//   ProgressBar.style.display = "block";
+document.addEventListener("touchstart", () => {
+  ProgressBar.style.display = "block";
 
-//   setTimeout(() => {
-//     ProgressBar.style.display = "none";
-//   }, 3000);
-// });
+  setTimeout(() => {
+    ProgressBar.style.display = "none";
+  }, 3000);
+});
 
 let progressAtimeout;
 
+ProgressA.addEventListener("touchstart", () => {
+  if (progressAtimeout) {
+    clearTimeout(progressAtimeout);
+    progressAtimeout = null;
+  }
+});
+
 ProgressA.addEventListener("touchmove", () => {
-  ProgressBar.style.display = "block";
   if (progressAtimeout) {
     clearTimeout(progressAtimeout);
     progressAtimeout = null;
