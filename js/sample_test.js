@@ -171,15 +171,22 @@ buttonE.addEventListener("mouseout", () => {
   ProgressBar.style.display = "none";
 });
 
+let progressAtimeout;
+
 document.addEventListener("touchstart", () => {
   ProgressBar.style.display = "block";
+  if (progressAtimeout) {
+    clearTimeout(progressAtimeout);
+    progressAtimeout = null;
+  }
+});
 
-  setTimeout(() => {
+document.addEventListener("touchend", () => {
+  progressAtimeout = setTimeout(() => {
     ProgressBar.style.display = "none";
   }, 3000);
 });
 
-let progressAtimeout;
 
 ProgressA.addEventListener("touchstart", () => {
   if (progressAtimeout) {
