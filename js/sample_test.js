@@ -179,12 +179,18 @@ document.addEventListener("touchstart", () => {
   }, 3000);
 });
 
+let progressAtimeout;
+
 ProgressA.addEventListener("touchmove", () => {
   ProgressBar.style.display = "block";
+  if (progressAtimeout) {
+    clearTimeout(progressAtimeout);
+    progressAtimeout = null;
+  }
 });
 
 ProgressA.addEventListener("touchend", () => {
-  setTimeout(() => {
+  progressAtimeout = setTimeout(() => {
     ProgressBar.style.display = "none";
   }, 3000);
 });
