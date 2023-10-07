@@ -179,6 +179,15 @@ document.addEventListener("touchstart", () => {
   }, 3000);
 });
 
+ProgressA.addEventListener("touchmove", () => {
+  ProgressBar.style.display = "block";
+});
+
+ProgressA.addEventListener("touchend", () => {
+  setTimeout(() => {
+    ProgressBar.style.display = "none";
+  }, 3000);
+});
 
 const convertTime = (time_position) => {
   time_position = Math.floor(time_position);
