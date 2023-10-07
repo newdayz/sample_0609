@@ -171,13 +171,13 @@ buttonE.addEventListener("mouseout", () => {
   ProgressBar.style.display = "none";
 });
 
-document.addEventListener("touchstart", () => {
-  ProgressBar.style.display = "block";
+// document.addEventListener("touchstart", () => {
+//   ProgressBar.style.display = "block";
 
-  setTimeout(() => {
-    ProgressBar.style.display = "none";
-  }, 3000);
-});
+//   setTimeout(() => {
+//     ProgressBar.style.display = "none";
+//   }, 3000);
+// });
 
 let progressAtimeout;
 
@@ -335,7 +335,7 @@ if (isVideoABox) {
 
       if (currentTimeA >= 88) {
         buttonB.style.display = 'block';
-        buttonB.addEventListener("click", () => {
+        const clickHandler_b = () => {
           if (isVideoVisible) {
             ClassA.style.zIndex = "29";
             VideoAElement.currentTime = 0;
@@ -360,6 +360,16 @@ if (isVideoABox) {
 
             console.log('button1をクリックしました');
           }
+        };
+
+        buttonB.addEventListener("click", clickHandler_b);
+
+        buttonB.addEventListener("touchstart", (event) => {
+          event.preventDefault();
+          clickHandler_b();
+          setTimeout(() => {
+            ProgressBar.style.display = "none";
+          }, 3000);
         });
       } else {
         buttonB.style.display = 'none';
