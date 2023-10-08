@@ -197,13 +197,10 @@ ProgressA.addEventListener("touchstart", () => {
     clearTimeout(progressAtimeout);
     progressAtimeout = null;
   }
-});
-
-ProgressA.addEventListener("touchend", () => {
-  if (isTouchingprogressBar) {
+  if (VideoAElement === play) {
     setProgressBarTimeout();
+    isTouchingprogressBar = false;
   }
-  isTouchingprogressBar = false;
 });
 
 btn_pause.addEventListener("touchstart", () => {
