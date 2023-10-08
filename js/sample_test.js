@@ -214,6 +214,7 @@ btn_pause.addEventListener("touchstart", () => {
 
 btn_play.addEventListener("touchstart", () => {
   setProgressBarTimeout();
+  isTouchingprogressBar = false;
 });
 
 const convertTime = (time_position) => {
