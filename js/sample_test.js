@@ -176,7 +176,7 @@ let isTouchingprogressBar = false;
 
 function setProgressBarTimeout() {
   progressAtimeout = setTimeout(() => {
-    ProgressA.style.display = "none";
+    ProgressBar.style.display = "none";
   }, 3000);
 }
 
