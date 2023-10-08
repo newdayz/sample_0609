@@ -205,6 +205,11 @@ ProgressA.addEventListener("touchend", () => {
 
 btn_pause.addEventListener("touchstart", () => {
   ProgressBar.style.display = "block";
+  isTouchingprogressBar = true;
+  if (isTouchingprogressBar) {
+    clearTimeout(progressAtimeout);
+    progressAtimeout = null;
+  }
 });
 
 btn_play.addEventListener("touchstart", () => {
