@@ -171,17 +171,14 @@ buttonE.addEventListener("mouseout", () => {
   ProgressBar.style.display = "none";
 });
 
-let progressAtimeout;
 let isTouchingprogressBar = false;
+let progressAtimeout;
 
 function setProgressBarTimeout() {
   progressAtimeout = setTimeout(() => {
     ProgressBar.style.display = "none";
   }, 3000);
 }
-
-let touchStartTimestamp = 0;
-let touchTimeout;
 
 VideoAElement.addEventListener("touchstart", () => {
   ProgressBar.style.display = "block";
@@ -592,12 +589,56 @@ back_B_A.addEventListener("mouseout", () => {
   ProgressBarB.style.display = "none";
 });
 
-VideoBElement.addEventListener("touchstart", () => {
-  ProgressBarB.style.display = "block";
+let progressBtimeout;
 
-  setTimeout(() => {
+function setProgressBarBTimeout() {
+  progressBtimeout = setTimeout(() => {
     ProgressBarB.style.display = "none";
   }, 3000);
+}
+
+VideoBElement.addEventListener("touchstart", () => {
+  ProgressBarB.style.display = "block";
+});
+
+VideoBElement.addEventListener("touchend", () => {
+  setProgressBarBTimeout();
+});
+
+ProgressB.addEventListener("touchstart", () => {
+  isTouchingprogressBar = true;
+  if (isTouchingprogressBar) {
+    clearTimeout(progressBtimeout);
+    progressBtimeout = null;
+  }
+});
+
+ProgressB.addEventListener("touchend", () => {
+  if (VideoBElement.paused) {
+    ProgressBarB.style.display = "block";
+    isTouchingprogressBar = true;
+    if (isTouchingprogressBar) {
+      clearTimeout(progressBtimeout);
+      progressBtimeout = null;
+    }
+  } else {
+    setProgressBarBTimeout();
+    isTouchingprogressBar = false;
+  }
+});
+
+PauseBtnB.addEventListener("touchstart", () => {
+  ProgressBarB.style.display = "block";
+  isTouchingprogressBar = true;
+  if (isTouchingprogressBar) {
+    clearTimeout(progressBtimeout);
+    progressBtimeout = null;
+  }
+});
+
+PlayBtnB.addEventListener("touchstart", () => {
+  setProgressBarBTimeout();
+  isTouchingprogressBar = false;
 });
 
 let playtimerB = null;
