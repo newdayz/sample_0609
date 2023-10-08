@@ -180,11 +180,17 @@ function setProgressBarTimeout() {
   }, 3000);
 }
 
+let touchStartTimestamp = 0;
+let touchTimeout;
+
 VideoAElement.addEventListener("touchstart", () => {
-  ProgressBar.style.display = "block";
-  if (ProgressBar.style.display === "block") {
-    isTouchingprogressBar();
+  const currentTime = Date.now();
+  const timeSinceLastTouch = currentTime - touchStartTimestamp;
+
+  if (timeSinceLastTouch < 3000) {
+    ProgressBar.style.display = "none";
   }
+  touchStartTimestamp = currentTime;
 });
 
 VideoAElement.addEventListener("touchend", () => {
