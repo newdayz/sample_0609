@@ -187,22 +187,21 @@ VideoAElement.addEventListener("touchend", () => {
   }, 3000);
 });
 
+let isTouching = false;
 
 ProgressA.addEventListener("touchstart", () => {
-  if (progressAtimeout) {
-    clearTimeout(progressAtimeout);
-    progressAtimeout = null;
-  }
+  isTouching = true;
 });
 
 ProgressA.addEventListener("touchmove", () => {
-  if (progressAtimeout) {
+  if (isTouching) {
     clearTimeout(progressAtimeout);
     progressAtimeout = null;
   }
 });
 
 ProgressA.addEventListener("touchend", () => {
+  isTouching = false;
   progressAtimeout = setTimeout(() => {
     ProgressBar.style.display = "none";
   }, 3000);
