@@ -200,15 +200,14 @@ ProgressA.addEventListener("touchstart", () => {
 });
 
 ProgressA.addEventListener("touchend", () => {
-  if (btn_pause.style.display === "block") {
-    setProgressBarTimeout();
-    isTouchingprogressBar = false;
-  } else {
-    clearTimeout(progressAtimeout);
-    progressAtimeout = null;
-  } if (btn_unmute.style.display === "block") {
-    setProgressBarTimeout();
-    isTouchingprogressBar = false;
+  if (btn_unmute.style.display === "block") {
+    if (btn_pause.style.display === "block") {
+      setProgressBarTimeout();
+      isTouchingprogressBar = false;
+    } else {
+      clearTimeout(progressAtimeout);
+      progressAtimeout = null;
+    }
   }
 });
 
