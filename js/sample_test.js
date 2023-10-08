@@ -197,6 +197,7 @@ ProgressA.addEventListener("touchstart", () => {
 });
 
 ProgressA.addEventListener("touchmove", () => {
+  isTouchingprogressBar = true;
   if (isTouchingprogressBar) {
     if (progressAtimeout) {
       clearTimeout(progressAtimeout);
