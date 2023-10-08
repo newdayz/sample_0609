@@ -176,6 +176,7 @@ let isTouchingprogressBar = false;
 
 VideoAElement.addEventListener("touchstart", () => {
   ProgressBar.style.display = "block";
+  ProgressA.style.display = "block";
   if (progressAtimeout) {
     clearTimeout(progressAtimeout);
     progressAtimeout = null;
@@ -202,6 +203,7 @@ ProgressA.addEventListener("touchmove", () => {
 ProgressA.addEventListener("touchend", () => {
   progressAtimeout = setTimeout(() => {
     ProgressBar.style.display = "none";
+    ProgressA.style.display = "none";
   }, 3000);
   isTouchingprogressBar = false;
 });
