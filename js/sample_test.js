@@ -211,7 +211,6 @@ ProgressA.addEventListener("touchend", () => {
 });
 
 btn_pause.addEventListener("touchstart", () => {
-
   isTouchingprogressBar = true;
   if (isTouchingprogressBar) {
     clearTimeout(progressAtimeout);
@@ -964,7 +963,18 @@ ProgressC.addEventListener("touchend", () => {
   }
 });
 
+PauseBtnC.addEventListener("touchstart", () => {
+  isTouchingprogressBar = true;
+  if (isTouchingprogressBar) {
+    clearTimeout(progressCtimeout);
+    progressCtimeout = null;
+  }
+});
 
+PlayBtnC.addEventListener("touchstart", () => {
+  setProgressBarCTimeout();
+  isTouchingprogressBar = false;
+});
 
 let playtimerC = null;
 
@@ -1257,12 +1267,55 @@ back_D_A.addEventListener("mouseout", () => {
   ProgressBarD.style.display = "none";
 });
 
-document.addEventListener("touchstart", () => {
-  ProgressBarD.style.display = "block";
+let progressDtimeout;
 
-  setTimeout(() => {
+function setProgressBarDTimeout() {
+  progressDtimeout = setTimeout(() => {
     ProgressBarD.style.display = "none";
   }, 3000);
+}
+
+VideoDElement.addEventListener("touchstart", () => {
+  ProgressBarD.style.display = "block";
+});
+
+VideoDElement.addEventListener("touchend", () => {
+  setProgressBarDTimeout();
+});
+
+ProgressD.addEventListener("touchstart", () => {
+  isTouchingprogressBar = true;
+  if (isTouchingprogressBar) {
+    clearTimeout(progressDtimeout);
+    progressDtimeout = null;
+  }
+});
+
+ProgressD.addEventListener("touchend", () => {
+  if (VideoDElement.paused) {
+    ProgressBarD.style.display = "block";
+    isTouchingprogressBar = true;
+    if (isTouchingprogressBar) {
+      clearTimeout(progressDtimeout);
+      progressDtimeout = null;
+    }
+  } else {
+    setProgressBarDTimeout();
+    isTouchingprogressBar = false;
+  }
+});
+
+PauseBtnD.addEventListener("touchstart", () => {
+  isTouchingprogressBar = true;
+  if (isTouchingprogressBar) {
+    clearTimeout(progressDtimeout);
+    progressDtimeout = null;
+  }
+});
+
+PlayBtnD.addEventListener("touchstart", () => {
+  setProgressBarDTimeout();
+  isTouchingprogressBar = false;
 });
 
 let playtimerD = null;
@@ -1571,12 +1624,55 @@ back_E_A.addEventListener("mouseout", () => {
   ProgressBarE.style.display = "none";
 });
 
-document.addEventListener("touchstart", () => {
-  ProgressBarE.style.display = "block";
+let progressEtimeout;
 
-  setTimeout(() => {
+function setProgressBarETimeout() {
+  progressEtimeout = setTimeout(() => {
     ProgressBarE.style.display = "none";
   }, 3000);
+}
+
+VideoEElement.addEventListener("touchstart", () => {
+  ProgressBarE.style.display = "block";
+});
+
+VideoEElement.addEventListener("touchend", () => {
+  setProgressBarETimeout();
+});
+
+ProgressE.addEventListener("touchstart", () => {
+  isTouchingprogressBar = true;
+  if (isTouchingprogressBar) {
+    clearTimeout(progressEtimeout);
+    progressEtimeout = null;
+  }
+});
+
+ProgressE.addEventListener("touchend", () => {
+  if (VideoEElement.paused) {
+    ProgressBarE.style.display = "block";
+    isTouchingprogressBar = true;
+    if (isTouchingprogressBar) {
+      clearTimeout(progressEtimeout);
+      progressEtimeout = null;
+    }
+  } else {
+    setProgressBarETimeout();
+    isTouchingprogressBar = false;
+  }
+});
+
+PauseBtnE.addEventListener("touchstart", () => {
+  isTouchingprogressBar = true;
+  if (isTouchingprogressBar) {
+    clearTimeout(progressEtimeout);
+    progressEtimeout = null;
+  }
+});
+
+PlayBtnE.addEventListener("touchstart", () => {
+  setProgressBarETimeout();
+  isTouchingprogressBar = false;
 });
 
 let playtimerE = null;
@@ -1818,12 +1914,55 @@ back_F_B.addEventListener("mouseout", () => {
   ProgressBarF.style.display = "none";
 });
 
-document.addEventListener("touchstart", () => {
-  ProgressBarF.style.display = "block";
+let progressFtimeout;
 
-  setTimeout(() => {
+function setProgressBarFTimeout() {
+  progressFtimeout = setTimeout(() => {
     ProgressBarF.style.display = "none";
   }, 3000);
+}
+
+VideoFElement.addEventListener("touchstart", () => {
+  ProgressBarF.style.display = "block";
+});
+
+VideoFElement.addEventListener("touchend", () => {
+  setProgressBarFTimeout();
+});
+
+ProgressF.addEventListener("touchstart", () => {
+  isTouchingprogressBar = true;
+  if (isTouchingprogressBar) {
+    clearTimeout(progressFtimeout);
+    progressFtimeout = null;
+  }
+});
+
+ProgressF.addEventListener("touchend", () => {
+  if (VideoFElement.paused) {
+    ProgressBarF.style.display = "block";
+    isTouchingprogressBar = true;
+    if (isTouchingprogressBar) {
+      clearTimeout(progressFtimeout);
+      progressFtimeout = null;
+    }
+  } else {
+    setProgressBarFTimeout();
+    isTouchingprogressBar = false;
+  }
+});
+
+PauseBtnF.addEventListener("touchstart", () => {
+  isTouchingprogressBar = true;
+  if (isTouchingprogressBar) {
+    clearTimeout(progressFtimeout);
+    progressFtimeout = null;
+  }
+});
+
+PlayBtnF.addEventListener("touchstart", () => {
+  setProgressBarFTimeout();
+  isTouchingprogressBar = false;
 });
 
 let playtimerF = null;
@@ -2104,12 +2243,55 @@ back_G_B.addEventListener("mouseout", () => {
   ProgressBarG.style.display = "none";
 });
 
-document.addEventListener("touchstart", () => {
-  ProgressBarG.style.display = "block";
+let progressGtimeout;
 
-  setTimeout(() => {
+function setProgressBarGTimeout() {
+  progressGtimeout = setTimeout(() => {
     ProgressBarG.style.display = "none";
   }, 3000);
+}
+
+VideoGElement.addEventListener("touchstart", () => {
+  ProgressBarG.style.display = "block";
+});
+
+VideoGElement.addEventListener("touchend", () => {
+  setProgressBarGTimeout();
+});
+
+ProgressG.addEventListener("touchstart", () => {
+  isTouchingprogressBar = true;
+  if (isTouchingprogressBar) {
+    clearTimeout(progressGtimeout);
+    progressGtimeout = null;
+  }
+});
+
+ProgressG.addEventListener("touchend", () => {
+  if (VideoGElement.paused) {
+    ProgressBarG.style.display = "block";
+    isTouchingprogressBar = true;
+    if (isTouchingprogressBar) {
+      clearTimeout(progressGtimeout);
+      progressGtimeout = null;
+    }
+  } else {
+    setProgressBarGTimeout();
+    isTouchingprogressBar = false;
+  }
+});
+
+PauseBtnG.addEventListener("touchstart", () => {
+  isTouchingprogressBar = true;
+  if (isTouchingprogressBar) {
+    clearTimeout(progressGtimeout);
+    progressGtimeout = null;
+  }
+});
+
+PlayBtnG.addEventListener("touchstart", () => {
+  setProgressBarGTimeout();
+  isTouchingprogressBar = false;
 });
 
 let playtimerG = null;
@@ -2386,12 +2568,55 @@ back_H_C.addEventListener("mouseout", () => {
   ProgressBarH.style.display = "none";
 });
 
-document.addEventListener("touchstart", () => {
-  ProgressBarH.style.display = "block";
+let progressHtimeout;
 
-  setTimeout(() => {
+function setProgressBarHTimeout() {
+  progressHtimeout = setTimeout(() => {
     ProgressBarH.style.display = "none";
   }, 3000);
+}
+
+VideoHElement.addEventListener("touchstart", () => {
+  ProgressBarH.style.display = "block";
+});
+
+VideoHElement.addEventListener("touchend", () => {
+  setProgressBarHTimeout();
+});
+
+ProgressH.addEventListener("touchstart", () => {
+  isTouchingprogressBar = true;
+  if (isTouchingprogressBar) {
+    clearTimeout(progressHtimeout);
+    progressHtimeout = null;
+  }
+});
+
+ProgressH.addEventListener("touchend", () => {
+  if (VideoHElement.paused) {
+    ProgressBarH.style.display = "block";
+    isTouchingprogressBar = true;
+    if (isTouchingprogressBar) {
+      clearTimeout(progressHtimeout);
+      progressHtimeout = null;
+    }
+  } else {
+    setProgressBarHTimeout();
+    isTouchingprogressBar = false;
+  }
+});
+
+PauseBtnH.addEventListener("touchstart", () => {
+  isTouchingprogressBar = true;
+  if (isTouchingprogressBar) {
+    clearTimeout(progressHtimeout);
+    progressHtimeout = null;
+  }
+});
+
+PlayBtnH.addEventListener("touchstart", () => {
+  setProgressBarHTimeout();
+  isTouchingprogressBar = false;
 });
 
 let playtimerH = null;
@@ -2683,12 +2908,55 @@ back_I_C.addEventListener("mouseout", () => {
   ProgressBarI.style.display = "none";
 });
 
-document.addEventListener("touchstart", () => {
-  ProgressBarI.style.display = "block";
+let progressItimeout;
 
-  setTimeout(() => {
+function setProgressBarITimeout() {
+  progressItimeout = setTimeout(() => {
     ProgressBarI.style.display = "none";
   }, 3000);
+}
+
+VideoIElement.addEventListener("touchstart", () => {
+  ProgressBarI.style.display = "block";
+});
+
+VideoIElement.addEventListener("touchend", () => {
+  setProgressBarITimeout();
+});
+
+ProgressI.addEventListener("touchstart", () => {
+  isTouchingprogressBar = true;
+  if (isTouchingprogressBar) {
+    clearTimeout(progressItimeout);
+    progressItimeout = null;
+  }
+});
+
+ProgressI.addEventListener("touchend", () => {
+  if (VideoIElement.paused) {
+    ProgressBarI.style.display = "block";
+    isTouchingprogressBar = true;
+    if (isTouchingprogressBar) {
+      clearTimeout(progressItimeout);
+      progressItimeout = null;
+    }
+  } else {
+    setProgressBarITimeout();
+    isTouchingprogressBar = false;
+  }
+});
+
+PauseBtnI.addEventListener("touchstart", () => {
+  isTouchingprogressBar = true;
+  if (isTouchingprogressBar) {
+    clearTimeout(progressItimeout);
+    progressItimeout = null;
+  }
+});
+
+PlayBtnI.addEventListener("touchstart", () => {
+  setProgressBarITimeout();
+  isTouchingprogressBar = false;
 });
 
 let playtimerI = null;
@@ -2980,12 +3248,55 @@ back_J_D.addEventListener("mouseout", () => {
   ProgressBarJ.style.display = "none";
 });
 
-document.addEventListener("touchstart", () => {
-  ProgressBarJ.style.display = "block";
+let progressJtimeout;
 
-  setTimeout(() => {
+function setProgressBarJTimeout() {
+  progressJtimeout = setTimeout(() => {
     ProgressBarJ.style.display = "none";
   }, 3000);
+}
+
+VideoJElement.addEventListener("touchstart", () => {
+  ProgressBarJ.style.display = "block";
+});
+
+VideoJElement.addEventListener("touchend", () => {
+  setProgressBarJTimeout();
+});
+
+ProgressJ.addEventListener("touchstart", () => {
+  isTouchingprogressBar = true;
+  if (isTouchingprogressBar) {
+    clearTimeout(progressJtimeout);
+    progressJtimeout = null;
+  }
+});
+
+ProgressJ.addEventListener("touchend", () => {
+  if (VideoJElement.paused) {
+    ProgressBarJ.style.display = "block";
+    isTouchingprogressBar = true;
+    if (isTouchingprogressBar) {
+      clearTimeout(progressJtimeout);
+      progressJtimeout = null;
+    }
+  } else {
+    setProgressBarJTimeout();
+    isTouchingprogressBar = false;
+  }
+});
+
+PauseBtnJ.addEventListener("touchstart", () => {
+  isTouchingprogressBar = true;
+  if (isTouchingprogressBar) {
+    clearTimeout(progressJtimeout);
+    progressJtimeout = null;
+  }
+});
+
+PlayBtnJ.addEventListener("touchstart", () => {
+  setProgressBarJTimeout();
+  isTouchingprogressBar = false;
 });
 
 let playtimerJ = null;
@@ -3259,12 +3570,55 @@ back_K_D.addEventListener("mouseout", () => {
   ProgressBarK.style.display = "none";
 });
 
-document.addEventListener("touchstart", () => {
-  ProgressBarK.style.display = "block";
+let progressKtimeout;
 
-  setTimeout(() => {
+function setProgressBarKTimeout() {
+  progressKtimeout = setTimeout(() => {
     ProgressBarK.style.display = "none";
   }, 3000);
+}
+
+VideoKElement.addEventListener("touchstart", () => {
+  ProgressBarK.style.display = "block";
+});
+
+VideoKElement.addEventListener("touchend", () => {
+  setProgressBarKTimeout();
+});
+
+ProgressK.addEventListener("touchstart", () => {
+  isTouchingprogressBar = true;
+  if (isTouchingprogressBar) {
+    clearTimeout(progressKtimeout);
+    progressKtimeout = null;
+  }
+});
+
+ProgressK.addEventListener("touchend", () => {
+  if (VideoKElement.paused) {
+    ProgressBarK.style.display = "block";
+    isTouchingprogressBar = true;
+    if (isTouchingprogressBar) {
+      clearTimeout(progressKtimeout);
+      progressKtimeout = null;
+    }
+  } else {
+    setProgressBarKTimeout();
+    isTouchingprogressBar = false;
+  }
+});
+
+PauseBtnK.addEventListener("touchstart", () => {
+  isTouchingprogressBar = true;
+  if (isTouchingprogressBar) {
+    clearTimeout(progressKtimeout);
+    progressKtimeout = null;
+  }
+});
+
+PlayBtnK.addEventListener("touchstart", () => {
+  setProgressBarKTimeout();
+  isTouchingprogressBar = false;
 });
 
 let playtimerK = null;
@@ -3541,12 +3895,55 @@ back_L_D.addEventListener("mouseout", () => {
   ProgressBarL.style.display = "none";
 });
 
-document.addEventListener("touchstart", () => {
-  ProgressBarL.style.display = "block";
+let progressLtimeout;
 
-  setTimeout(() => {
+function setProgressBarLTimeout() {
+  progressLtimeout = setTimeout(() => {
     ProgressBarL.style.display = "none";
   }, 3000);
+}
+
+VideoLElement.addEventListener("touchstart", () => {
+  ProgressBarL.style.display = "block";
+});
+
+VideoLElement.addEventListener("touchend", () => {
+  setProgressBarLTimeout();
+});
+
+ProgressL.addEventListener("touchstart", () => {
+  isTouchingprogressBar = true;
+  if (isTouchingprogressBar) {
+    clearTimeout(progressLtimeout);
+    progressLtimeout = null;
+  }
+});
+
+ProgressL.addEventListener("touchend", () => {
+  if (VideoLElement.paused) {
+    ProgressBarL.style.display = "block";
+    isTouchingprogressBar = true;
+    if (isTouchingprogressBar) {
+      clearTimeout(progressLtimeout);
+      progressLtimeout = null;
+    }
+  } else {
+    setProgressBarLTimeout();
+    isTouchingprogressBar = false;
+  }
+});
+
+PauseBtnL.addEventListener("touchstart", () => {
+  isTouchingprogressBar = true;
+  if (isTouchingprogressBar) {
+    clearTimeout(progressLtimeout);
+    progressLtimeout = null;
+  }
+});
+
+PlayBtnL.addEventListener("touchstart", () => {
+  setProgressBarLTimeout();
+  isTouchingprogressBar = false;
 });
 
 let playtimerL = null;
@@ -3818,12 +4215,55 @@ back_M_H.addEventListener("mouseout", () => {
   ProgressBarM.style.display = "none";
 });
 
-document.addEventListener("touchstart", () => {
-  ProgressBarM.style.display = "block";
+let progressMtimeout;
 
-  setTimeout(() => {
+function setProgressBarMTimeout() {
+  progressMtimeout = setTimeout(() => {
     ProgressBarM.style.display = "none";
   }, 3000);
+}
+
+VideoMElement.addEventListener("touchstart", () => {
+  ProgressBarM.style.display = "block";
+});
+
+VideoMElement.addEventListener("touchend", () => {
+  setProgressBarMTimeout();
+});
+
+ProgressM.addEventListener("touchstart", () => {
+  isTouchingprogressBar = true;
+  if (isTouchingprogressBar) {
+    clearTimeout(progressMtimeout);
+    progressMtimeout = null;
+  }
+});
+
+ProgressM.addEventListener("touchend", () => {
+  if (VideoMElement.paused) {
+    ProgressBarM.style.display = "block";
+    isTouchingprogressBar = true;
+    if (isTouchingprogressBar) {
+      clearTimeout(progressMtimeout);
+      progressMtimeout = null;
+    }
+  } else {
+    setProgressBarMTimeout();
+    isTouchingprogressBar = false;
+  }
+});
+
+PauseBtnM.addEventListener("touchstart", () => {
+  isTouchingprogressBar = true;
+  if (isTouchingprogressBar) {
+    clearTimeout(progressMtimeout);
+    progressMtimeout = null;
+  }
+});
+
+PlayBtnM.addEventListener("touchstart", () => {
+  setProgressBarMTimeout();
+  isTouchingprogressBar = false;
 });
 
 let playtimerM = null;
@@ -4100,12 +4540,55 @@ back_N_H.addEventListener("mouseout", () => {
   ProgressBarN.style.display = "none";
 });
 
-document.addEventListener("touchstart", () => {
-  ProgressBarN.style.display = "block";
+let progressNtimeout;
 
-  setTimeout(() => {
+function setProgressBarNTimeout() {
+  progressNtimeout = setTimeout(() => {
     ProgressBarN.style.display = "none";
   }, 3000);
+}
+
+VideoNElement.addEventListener("touchstart", () => {
+  ProgressBarN.style.display = "block";
+});
+
+VideoNElement.addEventListener("touchend", () => {
+  setProgressBarNTimeout();
+});
+
+ProgressN.addEventListener("touchstart", () => {
+  isTouchingprogressBar = true;
+  if (isTouchingprogressBar) {
+    clearTimeout(progressNtimeout);
+    progressNtimeout = null;
+  }
+});
+
+ProgressN.addEventListener("touchend", () => {
+  if (VideoNElement.paused) {
+    ProgressBarN.style.display = "block";
+    isTouchingprogressBar = true;
+    if (isTouchingprogressBar) {
+      clearTimeout(progressNtimeout);
+      progressNtimeout = null;
+    }
+  } else {
+    setProgressBarNTimeout();
+    isTouchingprogressBar = false;
+  }
+});
+
+PauseBtnN.addEventListener("touchstart", () => {
+  isTouchingprogressBar = true;
+  if (isTouchingprogressBar) {
+    clearTimeout(progressNtimeout);
+    progressNtimeout = null;
+  }
+});
+
+PlayBtnN.addEventListener("touchstart", () => {
+  setProgressBarNTimeout();
+  isTouchingprogressBar = false;
 });
 
 let playtimerN = null;
@@ -4382,12 +4865,55 @@ back_O_I.addEventListener("mouseout", () => {
   ProgressBarO.style.display = "none";
 });
 
-document.addEventListener("touchstart", () => {
-  ProgressBarO.style.display = "block";
+let progressOtimeout;
 
-  setTimeout(() => {
+function setProgressBarOTimeout() {
+  progressOtimeout = setTimeout(() => {
     ProgressBarO.style.display = "none";
   }, 3000);
+}
+
+VideoOElement.addEventListener("touchstart", () => {
+  ProgressBarO.style.display = "block";
+});
+
+VideoOElement.addEventListener("touchend", () => {
+  setProgressBarOTimeout();
+});
+
+ProgressO.addEventListener("touchstart", () => {
+  isTouchingprogressBar = true;
+  if (isTouchingprogressBar) {
+    clearTimeout(progressOtimeout);
+    progressOtimeout = null;
+  }
+});
+
+ProgressO.addEventListener("touchend", () => {
+  if (VideoOElement.paused) {
+    ProgressBarO.style.display = "block";
+    isTouchingprogressBar = true;
+    if (isTouchingprogressBar) {
+      clearTimeout(progressOtimeout);
+      progressOtimeout = null;
+    }
+  } else {
+    setProgressBarOTimeout();
+    isTouchingprogressBar = false;
+  }
+});
+
+PauseBtnO.addEventListener("touchstart", () => {
+  isTouchingprogressBar = true;
+  if (isTouchingprogressBar) {
+    clearTimeout(progressOtimeout);
+    progressOtimeout = null;
+  }
+});
+
+PlayBtnO.addEventListener("touchstart", () => {
+  setProgressBarOTimeout();
+  isTouchingprogressBar = false;
 });
 
 let playtimerO = null;
@@ -4664,12 +5190,55 @@ back_P_I.addEventListener("mouseout", () => {
   ProgressBarP.style.display = "none";
 });
 
-document.addEventListener("touchstart", () => {
-  ProgressBarP.style.display = "block";
+let progressPtimeout;
 
-  setTimeout(() => {
+function setProgressBarPTimeout() {
+  progressPtimeout = setTimeout(() => {
     ProgressBarP.style.display = "none";
   }, 3000);
+}
+
+VideoPElement.addEventListener("touchstart", () => {
+  ProgressBarP.style.display = "block";
+});
+
+VideoPElement.addEventListener("touchend", () => {
+  setProgressBarPTimeout();
+});
+
+ProgressP.addEventListener("touchstart", () => {
+  isTouchingprogressBar = true;
+  if (isTouchingprogressBar) {
+    clearTimeout(progressPtimeout);
+    progressPtimeout = null;
+  }
+});
+
+ProgressP.addEventListener("touchend", () => {
+  if (VideoPElement.paused) {
+    ProgressBarP.style.display = "block";
+    isTouchingprogressBar = true;
+    if (isTouchingprogressBar) {
+      clearTimeout(progressPtimeout);
+      progressPtimeout = null;
+    }
+  } else {
+    setProgressBarPTimeout();
+    isTouchingprogressBar = false;
+  }
+});
+
+PauseBtnP.addEventListener("touchstart", () => {
+  isTouchingprogressBar = true;
+  if (isTouchingprogressBar) {
+    clearTimeout(progressPtimeout);
+    progressPtimeout = null;
+  }
+});
+
+PlayBtnP.addEventListener("touchstart", () => {
+  setProgressBarPTimeout();
+  isTouchingprogressBar = false;
 });
 
 let playtimerP = null;
