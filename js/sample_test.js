@@ -173,7 +173,7 @@ buttonE.addEventListener("mouseout", () => {
 
 let progressAtimeout;
 
-document.addEventListener("touchstart", () => {
+VideoAElement.addEventListener("touchstart", () => {
   ProgressBar.style.display = "block";
   if (progressAtimeout) {
     clearTimeout(progressAtimeout);
@@ -181,7 +181,7 @@ document.addEventListener("touchstart", () => {
   }
 });
 
-document.addEventListener("touchend", () => {
+VideoAElement.addEventListener("touchend", () => {
   progressAtimeout = setTimeout(() => {
     ProgressBar.style.display = "none";
   }, 3000);
