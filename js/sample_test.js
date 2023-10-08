@@ -404,7 +404,7 @@ if (isVideoABox) {
 
       if (currentTimeA >= 93) {
         buttonC.style.display = 'block';
-        buttonC.addEventListener("click", () => {
+        const clickHandler_c = () => {
           if (isVideoVisible) {
             ClassA.style.zIndex = "29";
             VideoAElement.currentTime = 0;
@@ -429,6 +429,15 @@ if (isVideoABox) {
 
             console.log('button2をクリックしました');
           }
+        };
+        buttonC.addEventListener("click", clickHandler_c);
+
+        buttonC.addEventListener("touchstart", (event) => {
+          event.preventDefault();
+          clickHandler_c();
+          setTimeout(() => {
+            ProgressBar.style.display = "none";
+          }, 3000);
         });
       } else {
         buttonC.style.display = 'none';
@@ -436,7 +445,7 @@ if (isVideoABox) {
 
       if (currentTimeA >= 99) {
         buttonD.style.display = 'block';
-        buttonD.addEventListener("click", () => {
+        const clickHandler_d = () => {
           if (isVideoVisible) {
             ClassA.style.zIndex = "29";
             VideoAElement.currentTime = 0;
@@ -460,14 +469,23 @@ if (isVideoABox) {
 
             console.log('button3をクリックしました');
           }
+        };
+        buttonD.addEventListener("click", clickHandler_d);
+
+        buttonD.addEventListener("touchstart", (event) => {
+          event.preventDefault();
+          clickHandler_d();
+          setTimeout(() => {
+            ProgressBar.style.display = "none";
+          }, 3000);
         });
       } else {
         buttonD.style.display = 'none';
+      }
 
-
-      } if (currentTimeA >= 103) {
+      if (currentTimeA >= 103) {
         buttonE.style.display = 'block';
-        buttonE.addEventListener("click", () => {
+        const clickHandler_e = () => {
           if (isVideoVisible) {
             ClassA.style.zIndex = "29";
             VideoAElement.currentTime = 0;
@@ -492,6 +510,15 @@ if (isVideoABox) {
 
             console.log('button4をクリックしました');
           }
+        };
+        buttonE.addEventListener("click", clickHandler_e);
+
+        buttonE.addEventListener("touchstart", (event) => {
+          event.preventDefault();
+          clickHandler_e();
+          setTimeout(() => {
+            ProgressBar.style.display = "none";
+          }, 3000);
         });
       } else {
         buttonE.style.display = 'none';
