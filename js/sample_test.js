@@ -188,7 +188,6 @@ VideoAElement.addEventListener("touchend", () => {
   if (isTouchingprogressBar) {
     setProgressBarTimeout();
   }
-  isTouchingprogressBar = false;
 });
 
 ProgressA.addEventListener("touchstart", () => {
