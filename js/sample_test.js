@@ -197,9 +197,15 @@ ProgressA.addEventListener("touchstart", () => {
     clearTimeout(progressAtimeout);
     progressAtimeout = null;
   }
+});
+
+ProgressA.addEventListener("touchend", () => {
   if (btn_pause.style.display === "block") {
     setProgressBarTimeout();
     isTouchingprogressBar = false;
+  } else {
+    clearTimeout(progressAtimeout);
+    progressAtimeout = null;
   }
 });
 
