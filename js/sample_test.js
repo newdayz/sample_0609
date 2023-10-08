@@ -186,9 +186,13 @@ let touchTimeout;
 VideoAElement.addEventListener("touchstart", () => {
   const currentTime = Date.now();
   const timeSinceLastTouch = currentTime - touchStartTimestamp;
+  isTouchingprogressBar = true;
 
   if (timeSinceLastTouch < 3000) {
-    ProgressBar.style.display = "none";
+    if (isTouchingprogressBar) {
+      ProgressBar.style.display = "none";
+    }
+    isTouchingprogressBar = false;
   }
   touchStartTimestamp = currentTime;
 });
