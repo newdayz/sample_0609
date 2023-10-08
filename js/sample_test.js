@@ -197,7 +197,7 @@ ProgressA.addEventListener("touchstart", () => {
     clearTimeout(progressAtimeout);
     progressAtimeout = null;
   }
-  if (VideoAElement === play) {
+  if (btn_play.style.display === block) {
     setProgressBarTimeout();
     isTouchingprogressBar = false;
   }
