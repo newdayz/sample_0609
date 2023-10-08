@@ -203,6 +203,14 @@ ProgressA.addEventListener("touchend", () => {
   isTouchingprogressBar = false;
 });
 
+btn_pause.addEventListener("touchstart", () => {
+  ProgressBar.style.display = "block";
+});
+
+btn_play.addEventListener("touchstart", () => {
+  setProgressBarTimeout();
+});
+
 const convertTime = (time_position) => {
   time_position = Math.floor(time_position);
   let res = null;
@@ -277,6 +285,7 @@ if (isVideoABox) {
         stopTimer();
         btn_pause.style.display = 'none';
         btn_play.style.display = 'block';
+        ProgressBar.style.display = "block";
         console.log('A一時停止をクリックしました');
       }
     });
