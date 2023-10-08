@@ -182,6 +182,9 @@ function setProgressBarTimeout() {
 
 VideoAElement.addEventListener("touchstart", () => {
   ProgressBar.style.display = "block";
+  if (ProgressBar.style.display === "block") {
+    isTouchingprogressBar();
+  }
 });
 
 VideoAElement.addEventListener("touchend", () => {
