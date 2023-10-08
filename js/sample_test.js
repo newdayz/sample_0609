@@ -172,10 +172,10 @@ buttonE.addEventListener("mouseout", () => {
 });
 
 let progressAtimeout;
+let isTouchingprogressBar = false;
 
-VideoAElement.addEventListener("touchstart", (event) => {
+VideoAElement.addEventListener("touchstart", () => {
   ProgressBar.style.display = "block";
-  event.preventDefault();
   if (progressAtimeout) {
     clearTimeout(progressAtimeout);
     progressAtimeout = null;
@@ -188,24 +188,22 @@ VideoAElement.addEventListener("touchend", () => {
   }, 3000);
 });
 
-let isTouching = false;
-
 ProgressA.addEventListener("touchstart", () => {
-  isTouching = true;
+  isTouchingprogressBar = true;
 });
 
 ProgressA.addEventListener("touchmove", () => {
-  if (isTouching) {
+  if (isTouchingprogressBar) {
     clearTimeout(progressAtimeout);
     progressAtimeout = null;
   }
 });
 
 ProgressA.addEventListener("touchend", () => {
-  isTouching = false;
   progressAtimeout = setTimeout(() => {
     ProgressBar.style.display = "none";
   }, 3000);
+  isTouchingprogressBar = false;
 });
 
 const convertTime = (time_position) => {
