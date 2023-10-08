@@ -211,7 +211,7 @@ ProgressA.addEventListener("touchend", () => {
 });
 
 btn_pause.addEventListener("touchstart", () => {
-  ProgressBar.style.display = "block";
+
   isTouchingprogressBar = true;
   if (isTouchingprogressBar) {
     clearTimeout(progressAtimeout);
@@ -926,13 +926,44 @@ back_C_A.addEventListener("mouseout", () => {
   ProgressBarC.style.display = "none";
 });
 
-document.addEventListener("touchstart", () => {
-  ProgressBarC.style.display = "block";
+let progressCtimeout;
 
-  setTimeout(() => {
+function setProgressBarCTimeout() {
+  progressCtimeout = setTimeout(() => {
     ProgressBarC.style.display = "none";
   }, 3000);
+}
+
+VideoCElement.addEventListener("touchstart", () => {
+  ProgressBarC.style.display = "block";
 });
+
+VideoCElement.addEventListener("touchend", () => {
+  setProgressBarCTimeout();
+});
+
+ProgressC.addEventListener("touchstart", () => {
+  isTouchingprogressBar = true;
+  if (isTouchingprogressBar) {
+    clearTimeout(progressCtimeout);
+    progressCtimeout = null;
+  }
+});
+
+ProgressC.addEventListener("touchend", () => {
+  if (VideoCElement.paused) {
+    ProgressBarC.style.display = "block";
+    isTouchingprogressBar = true;
+    if (isTouchingprogressBar) {
+      clearTimeout(progressCtimeout);
+      progressCtimeout = null;
+    }
+  } else {
+    setProgressBarCTimeout();
+    isTouchingprogressBar = false;
+  }
+});
+
 
 
 let playtimerC = null;
