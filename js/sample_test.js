@@ -182,14 +182,10 @@ function setProgressBarTimeout() {
 
 VideoAElement.addEventListener("touchstart", () => {
   ProgressBar.style.display = "block";
-  ProgressA.style.display = "block";
-  setProgressBarTimeout();
 });
 
 VideoAElement.addEventListener("touchend", () => {
-  progressAtimeout = setTimeout(() => {
-    ProgressBar.style.display = "none";
-  }, 3000);
+  setProgressBarTimeout();
 });
 
 ProgressA.addEventListener("touchstart", () => {
