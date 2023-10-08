@@ -200,12 +200,14 @@ ProgressA.addEventListener("touchstart", () => {
 });
 
 ProgressA.addEventListener("touchend", () => {
-  if (btn_pause.style.display === "block") {
-    setProgressBarTimeout();
-    isTouchingprogressBar = false;
-  } else {
-    clearTimeout(progressAtimeout);
-    progressAtimeout = null;
+  if (ClassA.style.display === "block") {
+    if (btn_pause.style.display === "block") {
+      setProgressBarTimeout();
+      isTouchingprogressBar = false;
+    } else {
+      clearTimeout(progressAtimeout);
+      progressAtimeout = null;
+    }
   }
 });
 
@@ -297,7 +299,6 @@ if (isVideoABox) {
         stopTimer();
         btn_pause.style.display = 'none';
         btn_play.style.display = 'block';
-        ProgressBar.style.display = "block";
         console.log('A一時停止をクリックしました');
       }
     });
@@ -317,7 +318,6 @@ if (isVideoABox) {
         VideoAElement.muted = false;
         btn_mute.style.display = 'none';
         btn_unmute.style.display = 'block';
-
         console.log('Aミュートを解除しました');
       }
     });
