@@ -786,7 +786,7 @@ if (isVideoBBox) {
 
       if (currentTimeB >= 150) {
         buttonF.style.display = 'block';
-        buttonF.addEventListener("click", () => {
+        const clickHandler_f = () => {
           if (isVideoVisibleB) {
             ClassB.style.zIndex = "28";
             VideoBElement.currentTime = 0;
@@ -810,6 +810,15 @@ if (isVideoBBox) {
 
             console.log('button01Bをクリックしました');
           }
+        };
+        buttonF.addEventListener("click", clickHandler_f);
+
+        buttonF.addEventListener("touchstart", (event) => {
+          event.preventDefault();
+          clickHandler_f();
+          setTimeout(() => {
+            ProgressBarB.style.display = "none";
+          }, 3000);
         });
       } else {
         buttonF.style.display = 'none';
@@ -817,7 +826,7 @@ if (isVideoBBox) {
 
       if (currentTimeB >= 154) {
         buttonG.style.display = 'block';
-        buttonG.addEventListener("click", () => {
+        const clickHandler_g = () => {
           if (isVideoVisibleB) {
             ClassB.style.zIndex = "28";
             VideoBElement.currentTime = 0;
@@ -842,6 +851,15 @@ if (isVideoBBox) {
 
             console.log('button02をクリックしました');
           }
+        };
+        buttonG.addEventListener("click", clickHandler_g);
+
+        buttonG.addEventListener("touchstart", (event) => {
+          event.preventDefault();
+          clickHandler_g();
+          setTimeout(() => {
+            ProgressBarB.style.display = "none";
+          }, 3000);
         });
       } else {
         buttonG.style.display = 'none';
@@ -849,7 +867,7 @@ if (isVideoBBox) {
 
       if (currentTimeB >= 164) {
         back_B_A.style.display = 'block';
-        back_B_A.addEventListener("click", () => {
+        const clickHandler_back_b_a = () => {
           if (isVideoVisibleB) {
             ClassB.style.zIndex = "28";
             VideoBElement.currentTime = 0;
@@ -874,6 +892,15 @@ if (isVideoBBox) {
 
             console.log('button03をクリックしました');
           }
+        };
+        back_B_A.addEventListener("click", clickHandler_back_b_a);
+
+        back_B_A.addEventListener("touchstart", (event) => {
+          event.preventDefault();
+          clickHandler_back_b_a();
+          setTimeout(() => {
+            ProgressBarB.style.display = "none";
+          }, 3000);
         });
       } else {
         back_B_A.style.display = 'none';
@@ -1119,7 +1146,7 @@ VideoCElement.addEventListener('loadeddata', () => {
 
     if (currentTimeC >= 72) {
       buttonH.style.display = 'block';
-      buttonH.addEventListener("click", () => {
+      const clickHandler_h = () => {
         if (isVideoVisibleC) {
           ClassC.style.zIndex = "27";
           VideoCElement.currentTime = 0;
@@ -1144,6 +1171,15 @@ VideoCElement.addEventListener('loadeddata', () => {
 
           console.log('button01Cをクリックしました');
         }
+      };
+      buttonH.addEventListener("click", clickHandler_h);
+
+      buttonH.addEventListener("touchstart", (event) => {
+        event.preventDefault();
+        clickHandler_h();
+        setTimeout(() => {
+          ProgressBarC.style.display = "none";
+        }, 3000);
       });
     } else {
       buttonH.style.display = 'none';
@@ -1151,7 +1187,7 @@ VideoCElement.addEventListener('loadeddata', () => {
 
     if (currentTimeC >= 78) {
       buttonI.style.display = 'block';
-      buttonI.addEventListener("click", () => {
+      const clickHandler_i = () => {
         if (isVideoVisibleC) {
           ClassC.style.zIndex = "27";
           VideoCElement.currentTime = 0;
@@ -1176,6 +1212,15 @@ VideoCElement.addEventListener('loadeddata', () => {
 
           console.log('button02Cをクリックしました');
         }
+      };
+      buttonI.addEventListener("click", clickHandler_i);
+
+      buttonI.addEventListener("touchstart", (event) => {
+        event.preventDefault();
+        clickHandler_i();
+        setTimeout(() => {
+          ProgressBarC.style.display = "none";
+        }, 3000);
       });
     } else {
       buttonI.style.display = 'none';
@@ -1183,7 +1228,7 @@ VideoCElement.addEventListener('loadeddata', () => {
 
     if (currentTimeC >= 89) {
       back_C_A.style.display = 'block';
-      back_C_A.addEventListener("click", () => {
+      const clickHandler_back_c_a = () => {
         if (isVideoVisibleC) {
           ClassC.style.zIndex = "27";
           VideoCElement.currentTime = 0;
@@ -1208,6 +1253,15 @@ VideoCElement.addEventListener('loadeddata', () => {
 
           console.log('button03Cをクリックしました');
         }
+      };
+      back_C_A.addEventListener("click", clickHandler_back_c_a);
+
+      back_C_A.addEventListener("touchstart", (event) => {
+        event.preventDefault();
+        clickHandler_back_c_a();
+        setTimeout(() => {
+          ProgressBarC.style.display = "none";
+        }, 3000);
       });
     } else {
       back_C_A.style.display = 'none';
@@ -1460,7 +1514,7 @@ VideoDElement.addEventListener('loadeddata', () => {
 
     if (currentTimeD >= 70) {
       buttonJ.style.display = 'block';
-      buttonJ.addEventListener("click", () => {
+      const clickHandler_j = () => {
         if (isVideoVisibleD) {
           ClassD.style.zIndex = "26";
           VideoDElement.currentTime = 0;
@@ -1485,6 +1539,15 @@ VideoDElement.addEventListener('loadeddata', () => {
 
           console.log('button1Dをクリックしました');
         }
+      };
+      buttonJ.addEventListener("click", clickHandler_j);
+
+      buttonJ.addEventListener("touchstart", (event) => {
+        event.preventDefault();
+        clickHandler_j();
+        setTimeout(() => {
+          ProgressBarD.style.display = "none";
+        }, 3000);
       });
     } else {
       buttonJ.style.display = 'none';
@@ -1492,7 +1555,7 @@ VideoDElement.addEventListener('loadeddata', () => {
 
     if (currentTimeD >= 75) {
       buttonK.style.display = 'block';
-      buttonK.addEventListener("click", () => {
+      const clickHandler_k = () => {
         if (isVideoVisibleD) {
           ClassD.style.zIndex = "26";
           VideoDElement.currentTime = 0;
@@ -1517,6 +1580,15 @@ VideoDElement.addEventListener('loadeddata', () => {
 
           console.log('button2Dをクリックしました');
         }
+      };
+      buttonK.addEventListener("click", clickHandler_k);
+
+      buttonK.addEventListener("touchstart", (event) => {
+        event.preventDefault();
+        clickHandler_k();
+        setTimeout(() => {
+          ProgressBarD.style.display = "none";
+        }, 3000);
       });
     } else {
       buttonK.style.display = 'none';
@@ -1524,7 +1596,7 @@ VideoDElement.addEventListener('loadeddata', () => {
 
     if (currentTimeD >= 81) {
       buttonL.style.display = 'block';
-      buttonL.addEventListener("click", () => {
+      const clickHandler_l = () => {
         if (isVideoVisibleD) {
           ClassD.style.zIndex = "26";
           VideoDElement.currentTime = 0;
@@ -1549,6 +1621,15 @@ VideoDElement.addEventListener('loadeddata', () => {
 
           console.log('button3Dをクリックしました');
         }
+      };
+      buttonL.addEventListener("click", clickHandler_l);
+
+      buttonL.addEventListener("touchstart", (event) => {
+        event.preventDefault();
+        clickHandler_l();
+        setTimeout(() => {
+          ProgressBarD.style.display = "none";
+        }, 3000);
       });
     } else {
       buttonL.style.display = 'none';
@@ -1556,7 +1637,7 @@ VideoDElement.addEventListener('loadeddata', () => {
 
     if (currentTimeD >= 92) {
       back_D_A.style.display = 'block';
-      back_D_A.addEventListener("click", () => {
+      const clickHandler_back_d_a = () => {
         if (isVideoVisibleD) {
           ClassD.style.zIndex = "26";
           VideoDElement.currentTime = 0;
@@ -1581,6 +1662,15 @@ VideoDElement.addEventListener('loadeddata', () => {
 
           console.log('button4Dをクリックしました');
         }
+      };
+      back_D_A.addEventListener("click", clickHandler_back_d_a);
+
+      back_D_A.addEventListener("touchstart", (event) => {
+        event.preventDefault();
+        clickHandler_back_d_a();
+        setTimeout(() => {
+          ProgressBarD.style.display = "none";
+        }, 3000);
       });
     } else {
       back_D_A.style.display = 'none';
@@ -1821,7 +1911,7 @@ if (isVideoBoxE) {
 
       if (currentTimeE >= 256) {
         buttonE_Info.style.display = 'block';
-        buttonE_Info.addEventListener("click", () => {
+        const clickHandler_e_info = () => {
           if (isVideoVisibleE) {
 
             VideoEElement.pause();
@@ -1830,6 +1920,15 @@ if (isVideoBoxE) {
 
             console.log('buttonE_Infoをクリックしました');
           }
+        };
+        buttonE_Info.addEventListener("click", clickHandler_e_info);
+
+        buttonE_Info.addEventListener("touchstart", (event) => {
+          event.preventDefault();
+          clickHandler_e_info();
+          setTimeout(() => {
+            ProgressBarE.style.display = "none";
+          }, 3000);
         });
       } else {
         buttonE_Info.style.display = 'none';
@@ -1837,7 +1936,7 @@ if (isVideoBoxE) {
 
       if (currentTimeE >= 256) {
         back_E_A.style.display = 'block';
-        back_E_A.addEventListener("click", () => {
+        const clickHandler_back_e_a = () => {
           if (isVideoVisibleE) {
             ClassE.style.zIndex = "25";
             VideoEElement.currentTime = 0;
@@ -1862,6 +1961,15 @@ if (isVideoBoxE) {
 
             console.log('back_E_Aをクリックしました');
           }
+        };
+        back_E_A.addEventListener("click", clickHandler_back_e_a);
+
+        back_E_A.addEventListener("touchstart", (event) => {
+          event.preventDefault();
+          clickHandler_back_e_a();
+          setTimeout(() => {
+            ProgressBarE.style.display = "none";
+          }, 3000);
         });
       } else {
         back_E_A.style.display = 'none';
@@ -2114,7 +2222,7 @@ if (isVideoBoxF) {
 
       if (currentTimeF >= 338) {
         buttonF_Info.style.display = 'block';
-        buttonF_Info.addEventListener("click", () => {
+        const clickHandler_f_info = () => {
           if (isVideoVisibleF) {
 
             VideoFElement.pause();
@@ -2125,6 +2233,15 @@ if (isVideoBoxF) {
 
             console.log('buttonF_Infoをクリックしました');
           }
+        };
+        buttonF_Info.addEventListener("click", clickHandler_f_info);
+
+        buttonF_Info.addEventListener("touchstart", (event) => {
+          event.preventDefault();
+          clickHandler_f_info();
+          setTimeout(() => {
+            ProgressBarF.style.display = "none";
+          }, 3000);
         });
       } else {
         buttonF_Info.style.display = 'none';
@@ -2132,7 +2249,7 @@ if (isVideoBoxF) {
 
       if (currentTimeF >= 338) {
         opening_F_A.style.display = 'block';
-        opening_F_A.addEventListener("click", () => {
+        const clickHandler_opening_f_a = () => {
           if (isVideoVisibleF) {
             ClassF.style.zIndex = "24";
             VideoFElement.currentTime = 0;
@@ -2157,6 +2274,15 @@ if (isVideoBoxF) {
 
             console.log('opening_F_Aをクリックしました');
           }
+        };
+        opening_F_A.addEventListener("click", clickHandler_opening_f_a);
+
+        opening_F_A.addEventListener("touchstart", (event) => {
+          event.preventDefault();
+          clickHandler_opening_f_a();
+          setTimeout(() => {
+            ProgressBarF.style.display = "none";
+          }, 3000);
         });
       } else {
         opening_F_A.style.display = 'none';
@@ -2164,7 +2290,7 @@ if (isVideoBoxF) {
 
       if (currentTimeF >= 338) {
         back_F_B.style.display = 'block';
-        back_F_B.addEventListener("click", () => {
+        const clickHandler_back_f_b = () => {
           if (isVideoVisibleF) {
             ClassF.style.zIndex = "24";
             VideoFElement.currentTime = 0;
@@ -2192,6 +2318,15 @@ if (isVideoBoxF) {
 
             console.log('back_F_Bをクリックしました');
           }
+        };
+        back_F_B.addEventListener("click", clickHandler_back_f_b);
+
+        back_F_B.addEventListener("touchstart", (event) => {
+          event.preventDefault();
+          clickHandler_back_f_b();
+          setTimeout(() => {
+            ProgressBarF.style.display = "none";
+          }, 3000);
         });
       } else {
         back_F_B.style.display = 'none';
@@ -2443,7 +2578,7 @@ if (isVideoBoxG) {
 
       if (currentTimeG >= 183) {
         buttonG_Info.style.display = 'block';
-        buttonG_Info.addEventListener("click", () => {
+        const clickHandler_g_info = () => {
           if (isVideoVisibleG) {
 
             VideoGElement.pause();
@@ -2454,6 +2589,15 @@ if (isVideoBoxG) {
 
             console.log('buttonG_Infoをクリックしました');
           }
+        };
+        buttonG_Info.addEventListener("click", clickHandler_g_info);
+
+        buttonG_Info.addEventListener("touchstart", (event) => {
+          event.preventDefault();
+          clickHandler_g_info();
+          setTimeout(() => {
+            ProgressBarG.style.display = "none";
+          }, 3000);
         });
       } else {
         buttonG_Info.style.display = 'none';
@@ -2461,7 +2605,7 @@ if (isVideoBoxG) {
 
       if (currentTimeG >= 183) {
         opening_G_A.style.display = 'block';
-        opening_G_A.addEventListener("click", () => {
+        const clickHandler_opening_g_a = () => {
           if (isVideoVisibleG) {
             ClassG.style.zIndex = "23";
             VideoGElement.currentTime = 0;
@@ -2486,6 +2630,15 @@ if (isVideoBoxG) {
 
             console.log('opening_G_Aをクリックしました');
           }
+        };
+        opening_G_A.addEventListener("click", clickHandler_opening_g_a);
+
+        opening_G_A.addEventListener("touchstart", (event) => {
+          event.preventDefault();
+          clickHandler_opening_g_a();
+          setTimeout(() => {
+            ProgressBarG.style.display = "none";
+          }, 3000);
         });
       } else {
         opening_G_A.style.display = 'none';
@@ -2493,7 +2646,7 @@ if (isVideoBoxG) {
 
       if (currentTimeG >= 183) {
         back_G_B.style.display = 'block';
-        back_G_B.addEventListener("click", () => {
+        const clickHandler_back_g_b = () => {
           if (isVideoVisibleG) {
             ClassG.style.zIndex = "23";
             VideoGElement.currentTime = 0;
@@ -2518,6 +2671,15 @@ if (isVideoBoxG) {
 
             console.log('back_G_Bをクリックしました');
           }
+        };
+        back_G_B.addEventListener("click", clickHandler_back_g_b);
+
+        back_G_B.addEventListener("touchstart", (event) => {
+          event.preventDefault();
+          clickHandler_back_g_b();
+          setTimeout(() => {
+            ProgressBarG.style.display = "none";
+          }, 3000);
         });
       } else {
         back_G_B.style.display = 'none';
@@ -2768,7 +2930,7 @@ if (isVideoBoxH) {
 
       if (currentTimeH >= 21) {
         buttonM.style.display = 'block';
-        buttonM.addEventListener("click", () => {
+        const clickHandler_m = () => {
           if (isVideoVisibleH) {
             ClassH.style.zIndex = "22";
             VideoHElement.currentTime = 0;
@@ -2793,6 +2955,15 @@ if (isVideoBoxH) {
 
             console.log('buttonMをクリックしました');
           }
+        };
+        buttonH.addEventListener("click", clickHandler_m);
+
+        buttonH.addEventListener("touchstart", (event) => {
+          event.preventDefault();
+          clickHandler_m();
+          setTimeout(() => {
+            ProgressBarH.style.display = "none";
+          }, 3000);
         });
       } else {
         buttonM.style.display = 'none';
@@ -2800,7 +2971,7 @@ if (isVideoBoxH) {
 
       if (currentTimeH >= 24) {
         buttonN.style.display = 'block';
-        buttonN.addEventListener("click", () => {
+        const clickHandler_n = () => {
           if (isVideoVisibleH) {
             ClassH.style.zIndex = "22";
             VideoHElement.currentTime = 0;
@@ -2825,6 +2996,15 @@ if (isVideoBoxH) {
 
             console.log('buttonNをクリックしました');
           }
+        };
+        buttonN.addEventListener("click", clickHandler_n);
+
+        buttonN.addEventListener("touchstart", (event) => {
+          event.preventDefault();
+          clickHandler_n();
+          setTimeout(() => {
+            ProgressBarH.style.display = "none";
+          }, 3000);
         });
       } else {
         buttonN.style.display = 'none';
@@ -2832,7 +3012,7 @@ if (isVideoBoxH) {
 
       if (currentTimeH >= 33) {
         back_H_C.style.display = 'block';
-        back_H_C.addEventListener("click", () => {
+        const clickHandler_back_h_c = () => {
           if (isVideoVisibleH) {
             ClassH.style.zIndex = "22";
             VideoHElement.currentTime = 0;
@@ -2857,6 +3037,15 @@ if (isVideoBoxH) {
 
             console.log('buttonHをクリックしました');
           }
+        };
+        back_H_C.addEventListener("click", clickHandler_back_h_c);
+
+        back_H_C.addEventListener("touchstart", (event) => {
+          event.preventDefault();
+          clickHandler_back_h_c();
+          setTimeout(() => {
+            ProgressBarH.style.display = "none";
+          }, 3000);
         });
       } else {
         back_H_C.style.display = 'none';
@@ -3108,7 +3297,7 @@ if (isVideoBoxI) {
 
       if (currentTimeI >= 68) {
         buttonO.style.display = 'block';
-        buttonO.addEventListener("click", () => {
+        const clickHandler_o = () => {
           if (isVideoVisibleI) {
             ClassI.style.zIndex = "21";
             VideoIElement.currentTime = 0;
@@ -3133,6 +3322,15 @@ if (isVideoBoxI) {
 
             console.log('buttonOをクリックしました');
           }
+        };
+        buttonO.addEventListener("click", clickHandler_o);
+
+        buttonO.addEventListener("touchstart", (event) => {
+          event.preventDefault();
+          clickHandler_o();
+          setTimeout(() => {
+            ProgressBarI.style.display = "none";
+          }, 3000);
         });
       } else {
         buttonO.style.display = 'none';
@@ -3140,7 +3338,7 @@ if (isVideoBoxI) {
 
       if (currentTimeI >= 68) {
         buttonP.style.display = 'block';
-        buttonP.addEventListener("click", () => {
+        const clickHandler_p = () => {
           if (isVideoVisibleI) {
             ClassI.style.zIndex = "21";
             VideoIElement.currentTime = 0;
@@ -3165,6 +3363,15 @@ if (isVideoBoxI) {
 
             console.log('buttonPをクリックしました');
           }
+        };
+        buttonP.addEventListener("click", clickHandler_p);
+
+        buttonP.addEventListener("touchstart", (event) => {
+          event.preventDefault();
+          clickHandler_p();
+          setTimeout(() => {
+            ProgressBarI.style.display = "none";
+          }, 3000);
         });
       } else {
         buttonP.style.display = 'none';
@@ -3172,7 +3379,7 @@ if (isVideoBoxI) {
 
       if (currentTimeI >= 68) {
         back_I_C.style.display = 'block';
-        back_I_C.addEventListener("click", () => {
+        const clickHandler_back_i_c = () => {
           if (isVideoVisibleI) {
             ClassI.style.zIndex = "21";
             VideoIElement.currentTime = 0;
@@ -3197,6 +3404,15 @@ if (isVideoBoxI) {
 
             console.log('button03をクリックしました');
           }
+        };
+        back_I_C.addEventListener("click", clickHandler_back_i_c);
+
+        back_I_C.addEventListener("touchstart", (event) => {
+          event.preventDefault();
+          clickHandler_back_i_c();
+          setTimeout(() => {
+            ProgressBarI.style.display = "none";
+          }, 3000);
         });
       } else {
         back_I_C.style.display = 'none';
@@ -3445,7 +3661,7 @@ if (isVideoBoxJ) {
 
       if (currentTimeJ >= 186) {
         buttonJ_Info.style.display = 'block';
-        buttonJ_Info.addEventListener("click", () => {
+        const clickHandler_j_info = () => {
           if (isVideoVisibleJ) {
 
             VideoJElement.pause();
@@ -3454,6 +3670,15 @@ if (isVideoBoxJ) {
 
             console.log('buttonJ_Info');
           }
+        };
+        buttonJ_Info.addEventListener("click", clickHandler_j_info);
+
+        buttonJ_Info.addEventListener("touchstart", (event) => {
+          event.preventDefault();
+          clickHandler_j_info();
+          setTimeout(() => {
+            ProgressBarJ.style.display = "none";
+          }, 3000);
         });
       } else {
         buttonJ_Info.style.display = 'none';
@@ -3461,7 +3686,7 @@ if (isVideoBoxJ) {
 
       if (currentTimeJ >= 186) {
         opening_J_A.style.display = 'block';
-        opening_J_A.addEventListener("click", () => {
+        const clickHandler_opening_j_a = () => {
           if (isVideoVisibleJ) {
             ClassJ.style.zIndex = "20";
             VideoJElement.currentTime = 0;
@@ -3486,6 +3711,15 @@ if (isVideoBoxJ) {
 
             console.log('opening_J_A');
           }
+        };
+        opening_J_A.addEventListener("click", clickHandler_opening_j_a);
+
+        opening_J_A.addEventListener("touchstart", (event) => {
+          event.preventDefault();
+          clickHandler_opening_j_a();
+          setTimeout(() => {
+            ProgressBarJ.style.display = "none";
+          }, 3000);
         });
       } else {
         opening_J_A.style.display = 'none';
@@ -3493,7 +3727,7 @@ if (isVideoBoxJ) {
 
       if (currentTimeJ >= 186) {
         back_J_D.style.display = 'block';
-        back_J_D.addEventListener("click", () => {
+        const clickHandler_back_j_d = () => {
           if (isVideoVisibleJ) {
             ClassJ.style.zIndex = "20";
             VideoJElement.currentTime = 0;
@@ -3518,6 +3752,15 @@ if (isVideoBoxJ) {
 
             console.log('back_J_D');
           }
+        };
+        back_J_D.addEventListener("click", clickHandler_back_j_d);
+
+        back_J_D.addEventListener("touchstart", (event) => {
+          event.preventDefault();
+          clickHandler_back_j_d();
+          setTimeout(() => {
+            ProgressBarJ.style.display = "none";
+          }, 3000);
         });
       } else {
         back_J_D.style.display = 'none';
@@ -3771,7 +4014,7 @@ if (isVideoBoxK) {
 
       if (currentTimeK >= 152) {
         buttonK_Info.style.display = 'block';
-        buttonK_Info.addEventListener("click", () => {
+        const clickHandler_k_info = () => {
           if (isVideoVisibleK) {
 
             VideoKElement.pause();
@@ -3779,6 +4022,15 @@ if (isVideoBoxK) {
             PlayBtnK.style.display = "block";
             console.log('buttonK_Info');
           }
+        };
+        buttonK_Info.addEventListener("click", clickHandler_k_info);
+
+        buttonK_Info.addEventListener("touchstart", (event) => {
+          event.preventDefault();
+          clickHandler_k_info();
+          setTimeout(() => {
+            ProgressBarK.style.display = "none";
+          }, 3000);
         });
       } else {
         buttonK_Info.style.display = 'none';
@@ -3786,7 +4038,7 @@ if (isVideoBoxK) {
 
       if (currentTimeK >= 152) {
         opening_K_A.style.display = 'block';
-        opening_K_A.addEventListener("click", () => {
+        const clickHandler_opening_k_a = () => {
           if (isVideoVisibleK) {
             ClassK.style.zIndex = "19";
             VideoKElement.currentTime = 0;
@@ -3811,6 +4063,15 @@ if (isVideoBoxK) {
 
             console.log('opening_K_A');
           }
+        };
+        opening_K_A.addEventListener("click", clickHandler_opening_k_a);
+
+        opening_K_A.addEventListener("touchstart", (event) => {
+          event.preventDefault();
+          clickHandler_opening_k_a();
+          setTimeout(() => {
+            ProgressBarK.style.display = "none";
+          }, 3000);
         });
       } else {
         opening_K_A.style.display = 'none';
@@ -3818,7 +4079,7 @@ if (isVideoBoxK) {
 
       if (currentTimeK >= 152) {
         back_K_D.style.display = 'block';
-        back_K_D.addEventListener("click", () => {
+        const clickHandler_back_K_d = () => {
           if (isVideoVisibleK) {
             ClassK.style.zIndex = "19";
             VideoKElement.currentTime = 0;
@@ -3843,6 +4104,15 @@ if (isVideoBoxK) {
 
             console.log('back_K_D');
           }
+        };
+        back_K_D.addEventListener("click", clickHandler_back_K_d);
+
+        back_K_D.addEventListener("touchstart", (event) => {
+          event.preventDefault();
+          clickHandler_back_K_d();
+          setTimeout(() => {
+            ProgressBarK.style.display = "none";
+          }, 3000);
         });
       } else {
         back_K_D.style.display = 'none';
@@ -4091,7 +4361,7 @@ if (isVideoBoxL) {
 
       if (currentTimeL >= 172) {
         buttonL_Info.style.display = 'block';
-        buttonL_Info.addEventListener("click", () => {
+        const clickHandler_l_info = () => {
           if (isVideoVisibleL) {
 
             VideoLElement.pause();
@@ -4099,6 +4369,15 @@ if (isVideoBoxL) {
             PlayBtnL.style.display = "block";
             console.log('buttonL_Info');
           }
+        };
+        buttonL_Info.addEventListener("click", clickHandler_l_info);
+
+        buttonL_Info.addEventListener("touchstart", (event) => {
+          event.preventDefault();
+          clickHandler_l_info();
+          setTimeout(() => {
+            ProgressBarL.style.display = "none";
+          }, 3000);
         });
       } else {
         buttonL_Info.style.display = 'none';
@@ -4106,7 +4385,7 @@ if (isVideoBoxL) {
 
       if (currentTimeL >= 172) {
         opening_L_A.style.display = 'block';
-        opening_L_A.addEventListener("click", () => {
+        const clickHandler_opening_l_a = () => {
           if (isVideoVisibleL) {
             ClassL.style.zIndex = "18";
             VideoLElement.currentTime = 0;
@@ -4131,6 +4410,15 @@ if (isVideoBoxL) {
 
             console.log('opening_L_A');
           }
+        };
+        opening_L_A.addEventListener("click", clickHandler_opening_l_a);
+
+        opening_L_A.addEventListener("touchstart", (event) => {
+          event.preventDefault();
+          clickHandler_opening_l_a();
+          setTimeout(() => {
+            ProgressBarL.style.display = "none";
+          }, 3000);
         });
       } else {
         opening_L_A.style.display = 'none';
@@ -4138,7 +4426,7 @@ if (isVideoBoxL) {
 
       if (currentTimeL >= 172) {
         back_L_D.style.display = 'block';
-        back_L_D.addEventListener("click", () => {
+        const clickHandler_back_l_d = () => {
           if (isVideoVisibleL) {
             ClassL.style.zIndex = "18";
             VideoLElement.currentTime = 0;
@@ -4163,6 +4451,15 @@ if (isVideoBoxL) {
 
             console.log('back_L_D');
           }
+        };
+        back_L_D.addEventListener("click", clickHandler_back_l_d);
+
+        back_L_D.addEventListener("touchstart", (event) => {
+          event.preventDefault();
+          clickHandler_back_l_d();
+          setTimeout(() => {
+            ProgressBarL.style.display = "none";
+          }, 3000);
         });
       } else {
         back_L_D.style.display = 'none';
@@ -4416,7 +4713,7 @@ if (isVideoBoxM) {
 
       if (currentTimeM >= 267) {
         buttonM_Info.style.display = 'block';
-        buttonM_Info.addEventListener("click", () => {
+        const clickHandler_m_info = () => {
           if (isVideoVisibleM) {
 
             VideoMElement.pause();
@@ -4424,6 +4721,15 @@ if (isVideoBoxM) {
             PlayBtnM.style.display = "block";
             console.log('buttonM_Info');
           }
+        };
+        buttonM_Info.addEventListener("click", clickHandler_m_info);
+
+        buttonM_Info.addEventListener("touchstart", (event) => {
+          event.preventDefault();
+          clickHandler_m_info();
+          setTimeout(() => {
+            ProgressBarM.style.display = "none";
+          }, 3000);
         });
       } else {
         buttonM_Info.style.display = 'none';
@@ -4431,7 +4737,7 @@ if (isVideoBoxM) {
 
       if (currentTimeM >= 267) {
         opening_M_A.style.display = 'block';
-        opening_M_A.addEventListener("click", () => {
+        const clickHandler_opening_m_a = () => {
           if (isVideoVisibleM) {
             ClassM.style.zIndex = "17";
             VideoMElement.currentTime = 0;
@@ -4456,6 +4762,15 @@ if (isVideoBoxM) {
 
             console.log('opening_M_A');
           }
+        };
+        opening_M_A.addEventListener("click", clickHandler_opening_m_a);
+
+        opening_M_A.addEventListener("touchstart", (event) => {
+          event.preventDefault();
+          clickHandler_opening_m_a();
+          setTimeout(() => {
+            ProgressBarM.style.display = "none";
+          }, 3000);
         });
       } else {
         opening_M_A.style.display = 'none';
@@ -4463,7 +4778,7 @@ if (isVideoBoxM) {
 
       if (currentTimeM >= 267) {
         back_M_H.style.display = 'block';
-        back_M_H.addEventListener("click", () => {
+        const clickHandler_back_m_h = () => {
           if (isVideoVisibleM) {
             ClassM.style.zIndex = "17";
             VideoMElement.currentTime = 0;
@@ -4488,6 +4803,15 @@ if (isVideoBoxM) {
 
             console.log('back_M_H');
           }
+        };
+        back_M_H.addEventListener("click", clickHandler_back_m_h);
+
+        back_M_H.addEventListener("touchstart", (event) => {
+          event.preventDefault();
+          clickHandler_back_m_h();
+          setTimeout(() => {
+            ProgressBarM.style.display = "none";
+          }, 3000);
         });
       } else {
         back_M_H.style.display = 'none';
@@ -4741,7 +5065,7 @@ if (isVideoBoxN) {
 
       if (currentTimeN >= 278) {
         buttonN_Info.style.display = 'block';
-        buttonN_Info.addEventListener("click", () => {
+        const clickHandler_n_info = () => {
           if (isVideoVisibleN) {
 
             VideoNElement.pause();
@@ -4749,6 +5073,15 @@ if (isVideoBoxN) {
             PlayBtnN.style.display = "block";
             console.log('buttonN_Info');
           }
+        };
+        buttonN_Info.addEventListener("click", clickHandler_n_info);
+
+        buttonN_Info.addEventListener("touchstart", (event) => {
+          event.preventDefault();
+          clickHandler_n_info();
+          setTimeout(() => {
+            ProgressBarN.style.display = "none";
+          }, 3000);
         });
       } else {
         buttonN_Info.style.display = 'none';
@@ -4756,7 +5089,7 @@ if (isVideoBoxN) {
 
       if (currentTimeN >= 278) {
         opening_N_A.style.display = 'block';
-        opening_N_A.addEventListener("click", () => {
+        const clickHandler_opening_n_a = () => {
           if (isVideoVisibleN) {
             ClassN.style.zIndex = "16";
             VideoNElement.currentTime = 0;
@@ -4781,6 +5114,15 @@ if (isVideoBoxN) {
 
             console.log('opening_N_A');
           }
+        };
+        opening_N_A.addEventListener("click", clickHandler_opening_n_a);
+
+        opening_N_A.addEventListener("touchstart", (event) => {
+          event.preventDefault();
+          clickHandler_opening_n_a();
+          setTimeout(() => {
+            ProgressBarN.style.display = "none";
+          }, 3000);
         });
       } else {
         opening_N_A.style.display = 'none';
@@ -4788,7 +5130,7 @@ if (isVideoBoxN) {
 
       if (currentTimeN >= 278) {
         back_N_H.style.display = 'block';
-        back_N_H.addEventListener("click", () => {
+        const clickHandler_back_n_h = () => {
           if (isVideoVisibleN) {
             ClassN.style.zIndex = "16";
             VideoNElement.currentTime = 0;
@@ -4813,6 +5155,15 @@ if (isVideoBoxN) {
 
             console.log('back_N_H');
           }
+        };
+        back_N_H.addEventListener("click", clickHandler_back_n_h);
+
+        back_N_H.addEventListener("touchstart", (event) => {
+          event.preventDefault();
+          clickHandler_back_n_h();
+          setTimeout(() => {
+            ProgressBarN.style.display = "none";
+          }, 3000);
         });
       } else {
         back_N_H.style.display = 'none';
@@ -5066,7 +5417,7 @@ if (isVideoBoxO) {
 
       if (currentTimeO >= 146) {
         buttonO_Info.style.display = 'block';
-        buttonO_Info.addEventListener("click", () => {
+        const clickHandler_o_info = () => {
           if (isVideoVisibleO) {
 
             VideoOElement.pause();
@@ -5074,6 +5425,15 @@ if (isVideoBoxO) {
             PlayBtnO.style.display = "block";
             console.log('buttonO_Info');
           }
+        };
+        buttonO_Info.addEventListener("click", clickHandler_o_info);
+
+        buttonO_Info.addEventListener("touchstart", (event) => {
+          event.preventDefault();
+          clickHandler_o_info();
+          setTimeout(() => {
+            ProgressBarO.style.display = "none";
+          }, 3000);
         });
       } else {
         buttonO_Info.style.display = 'none';
@@ -5081,7 +5441,7 @@ if (isVideoBoxO) {
 
       if (currentTimeO >= 146) {
         opening_O_A.style.display = 'block';
-        opening_O_A.addEventListener("click", () => {
+        const clickHandler_opening_o_a = () => {
           if (isVideoVisibleO) {
             ClassO.style.zIndex = "15";
             VideoOElement.currentTime = 0;
@@ -5106,6 +5466,15 @@ if (isVideoBoxO) {
 
             console.log('opening_O_A');
           }
+        };
+        opening_O_A.addEventListener("click", clickHandler_opening_o_a);
+
+        opening_O_A.addEventListener("touchstart", (event) => {
+          event.preventDefault();
+          clickHandler_opening_o_a();
+          setTimeout(() => {
+            ProgressBarO.style.display = "none";
+          }, 3000);
         });
       } else {
         opening_O_A.style.display = 'none';
@@ -5113,7 +5482,7 @@ if (isVideoBoxO) {
 
       if (currentTimeO >= 146) {
         back_O_I.style.display = 'block';
-        back_O_I.addEventListener("click", () => {
+        const clickHandler_back_o_i = () => {
           if (isVideoVisibleO) {
             ClassO.style.zIndex = "15";
             VideoOElement.currentTime = 0;
@@ -5138,6 +5507,15 @@ if (isVideoBoxO) {
 
             console.log('back_O_I');
           }
+        };
+        back_O_I.addEventListener("click", clickHandler_back_o_i);
+
+        back_O_I.addEventListener("touchstart", (event) => {
+          event.preventDefault();
+          clickHandler_back_o_i();
+          setTimeout(() => {
+            ProgressBarO.style.display = "none";
+          }, 3000);
         });
       } else {
         back_O_I.style.display = 'none';
@@ -5391,7 +5769,7 @@ if (isVideoBoxP) {
 
       if (currentTimeP >= 240) {
         buttonP_Info.style.display = 'block';
-        buttonP_Info.addEventListener("click", () => {
+        const clickHandler_p_info = () => {
           if (isVideoVisibleP) {
 
             VideoPElement.pause();
@@ -5399,6 +5777,15 @@ if (isVideoBoxP) {
             PlayBtnP.style.display = "block";
             console.log('buttonP_Info');
           }
+        };
+        buttonP_Info.addEventListener("click", clickHandler_p_info);
+
+        buttonP_Info.addEventListener("touchstart", (event) => {
+          event.preventDefault();
+          clickHandler_p_info();
+          setTimeout(() => {
+            ProgressBarP.style.display = "none";
+          }, 3000);
         });
       } else {
         buttonP_Info.style.display = 'none';
@@ -5406,7 +5793,7 @@ if (isVideoBoxP) {
 
       if (currentTimeP >= 240) {
         opening_P_A.style.display = 'block';
-        opening_P_A.addEventListener("click", () => {
+        const clickHandler_opening_p_a = () => {
           if (isVideoVisibleP) {
             ClassP.style.zIndex = "14";
             VideoPElement.currentTime = 0;
@@ -5431,6 +5818,15 @@ if (isVideoBoxP) {
 
             console.log('opening_P_A');
           }
+        };
+        opening_P_A.addEventListener("click", clickHandler_opening_p_a);
+
+        opening_P_A.addEventListener("touchstart", (event) => {
+          event.preventDefault();
+          clickHandler_opening_p_a();
+          setTimeout(() => {
+            ProgressBarP.style.display = "none";
+          }, 3000);
         });
       } else {
         opening_P_A.style.display = 'none';
@@ -5438,7 +5834,7 @@ if (isVideoBoxP) {
 
       if (currentTimeP >= 240) {
         back_P_I.style.display = 'block';
-        back_P_I.addEventListener("click", () => {
+        const clickHandler_back_p_i = () => {
           if (isVideoVisibleP) {
             ClassP.style.zIndex = "14";
             VideoPElement.currentTime = 0;
@@ -5463,6 +5859,15 @@ if (isVideoBoxP) {
 
             console.log('back_P_I');
           }
+        };
+        back_P_I.addEventListener("click", clickHandler_back_p_i);
+
+        back_P_I.addEventListener("touchstart", (event) => {
+          event.preventDefault();
+          clickHandler_back_p_i();
+          setTimeout(() => {
+            ProgressBarP.style.display = "none";
+          }, 3000);
         });
       } else {
         back_P_I.style.display = 'none';
