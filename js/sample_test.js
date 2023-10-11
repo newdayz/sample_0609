@@ -123,9 +123,42 @@ const buttonP_Info = document.getElementById('button_p_info');
 const opening_P_A = document.getElementById('button_p_a');
 const back_P_I = document.getElementById('button_p_i');
 
+let timer = null;
+
+let isTouchingprogressBar = false;
+let progressAtimeout;
+
 VideoAElement.addEventListener("mouseover", () => {
   ProgressBar.style.display = "block";
+
+  timer = setTimeout(() => {
+    ProgressBar.style.display = "none";
+  }, 3000);
+
 });
+//VideoAElementの上でmouseが動いたらProgressBar.style.display = "block";になって、3秒mouseが動かなかったら、ProgressBar.style.display = "none";になるコード
+
+VideoAElement.addEventListener("mousemove", () => {
+
+  clearTimeout(timer);
+
+  ProgressBar.style.display = "block";
+
+  timer = setTimeout(() => {
+    ProgressBar.style.display = "none";
+  }, 3000);
+});
+
+// VideoAElement.addEventListener("mousemove", () => {
+//   if (timer === false) {
+//     ProgressBar.style.display = "block";
+//   } else {
+//     timer = setTimeout(() => {
+//       ProgressBar.style.display = "none";
+//     }, 3000);
+//   }
+// });
+
 
 VideoAElement.addEventListener("mouseout", () => {
   ProgressBar.style.display = "none";
@@ -137,6 +170,18 @@ ProgressBar.addEventListener("mouseover", () => {
 
 ProgressBar.addEventListener("mouseout", () => {
   ProgressBar.style.display = "none";
+});
+
+btn_pause.addEventListener("click", () => {
+  isTouchingprogressBar = true;
+  if (isTouchingprogressBar) {
+    clearTimeout(timer);
+  }
+});
+
+btn_play.addEventListener("click", () => {
+  setProgressBarTimeout();
+  isTouchingprogressBar = false;
 });
 
 buttonB.addEventListener("mouseover", () => {
@@ -170,9 +215,6 @@ buttonE.addEventListener("mouseover", () => {
 buttonE.addEventListener("mouseout", () => {
   ProgressBar.style.display = "none";
 });
-
-let isTouchingprogressBar = false;
-let progressAtimeout;
 
 function setProgressBarTimeout() {
   progressAtimeout = setTimeout(() => {
