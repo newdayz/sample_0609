@@ -2,7 +2,7 @@
 
 body {
   margin: 0 auto;
-   background: black; 
+  background: black;
 }
 
 .main_container {
@@ -512,75 +512,65 @@ img {
   cursor: pointer;
 }
 
-
-/* @media (orientation: landscape) and (min-width: 667px) {
-  .container {
-    width: 40%;
-    left: 30%;
-    right: 30%;
-    top: 0;
-    bottom: 0;
-  }
-}  */
-
-/* @media (min-width: 720px) {
-  .container {
-    width: 70%;
-    left: 15%;
-    right: 15%;
-    top: 5%;
-    bottom: 5%;
-  }
-}
-
-@media (min-width: 800px) {
-  .container {
-    width: 75%;
-    left: 10%;
-    right: 10%;
+@media (max-width: 1440px) {
+  #progress_bar,
+  #progress_bar_b,
+  #progress_bar_c,
+  #progress_bar_d,
+  #progress_bar_e,
+  #progress_bar_f,
+  #progress_bar_g,
+  #progress_bar_h,
+  #progress_bar_i,
+  #progress_bar_j,
+  #progress_bar_k,
+  #progress_bar_l,
+  #progress_bar_m,
+  #progress_bar_n,
+  #progress_bar_o,
+  #progress_bar_p {
+  top: 90%;
   }
 }
 
-@media (min-width: 880px) {
-  .container {
-    width: 80%;
+@media (max-width: 940px) {
+  #progress_bar,
+  #progress_bar_b,
+  #progress_bar_c,
+  #progress_bar_d,
+  #progress_bar_e,
+  #progress_bar_f,
+  #progress_bar_g,
+  #progress_bar_h,
+  #progress_bar_i,
+  #progress_bar_j,
+  #progress_bar_k,
+  #progress_bar_l,
+  #progress_bar_m,
+  #progress_bar_n,
+  #progress_bar_o,
+  #progress_bar_p {
+  top: 85%;
   }
 }
 
-@media(min-width: 960px) {
-  .container {
-    width: 85%;
-    left: 5%;
-    right: 5%;
+@media (max-width: 700px) {
+  #progress_bar,
+  #progress_bar_b,
+  #progress_bar_c,
+  #progress_bar_d,
+  #progress_bar_e,
+  #progress_bar_f,
+  #progress_bar_g,
+  #progress_bar_h,
+  #progress_bar_i,
+  #progress_bar_j,
+  #progress_bar_k,
+  #progress_bar_l,
+  #progress_bar_m,
+  #progress_bar_n,
+  #progress_bar_o,
+  #progress_bar_p {
+  top: 80%;
   }
 }
-
-@media(min-width: 1020px) {
-  .container {
-    width: 85%;
-    left: 10%;
-    right: 10%;
-  }
-}
-
-@media(min-width: 1080px) {
-  .container {
-    width: 80%;
-    left: 10%;
-    right: 10%;
-  }
-}
-
-@media (min-width: 1160px) {
-  .container {
-    width: 75%;
-    left: 15%;
-    right: 15%;
-  }
-}
-
-@media (min-width: 1240px) {
-  .container {
-    width: 70%;
-  }
-} */
