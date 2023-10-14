@@ -178,7 +178,6 @@ btn_unmute.addEventListener("mouseout", () => {
   ProgressBar.style.display = "none";
 });
 
-
 buttonB.addEventListener("mouseover", () => {
   ProgressBar.style.display = "block";
 });
@@ -224,10 +223,6 @@ VideoAElement.addEventListener("touchstart", () => {
     clearTimeout(timer);
     ProgressBar.style.display = "none";
   }
-});
-
-VideoAElement.addEventListener("touchend", () => {
-  timer = setTimeout(setProgressBarTimeout, 3000);
 });
 
 ProgressA.addEventListener("touchstart", () => {
