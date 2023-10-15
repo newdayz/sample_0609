@@ -242,7 +242,7 @@ ProgressA.addEventListener("touchstart", (e) => {
   console.log(e);
 });
 
-ProgressA.addEventListener("touchmove", () => {
+ProgressA.addEventListener("touchmove", (e) => {
   if (VideoAElement.paused) {
     ProgressBar.style.display = "block";
     clearTimeout(touchTimer);
@@ -250,8 +250,9 @@ ProgressA.addEventListener("touchmove", () => {
     ProgressBar.style.display = "block";
     clearTimeout(touchTimer);
   }
+  console.log(e);
 });
-
+//3秒以内にtouchstartイベントが発生したら、
 ProgressA.addEventListener("touchend", (e) => {
   touchTimer = setTimeout(setProgressBarTimeout, 3000);
   isTouchingprogressBar = false;
@@ -351,8 +352,9 @@ if (isVideoABox) {
       event.preventDefault();
       btn_pauseClickhandler_a();
       if (VideoAElement.paused) {
-        ProgressBar.style.display = "block";
         clearTimeout(touchTimer);
+      } else {
+    touchTimer = setTimeout(setProgressBarTimeout, 3000);
       }
     });
 
