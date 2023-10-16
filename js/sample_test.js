@@ -297,11 +297,9 @@ ProgressA.addEventListener("touchmove", (e) => {
 });
 //3秒以内にtouchstartイベントが発生したら、
 ProgressA.addEventListener("touchend", (e) => {
-  isTouchingprogressBar = false;
   if (VideoAElement.paused) {
     ProgressBar.style.display = "block";
     clearTimeout(touchTimer);
-    isTouchingprogressBar = true;
   } else {
     touchTimer = setTimeout(setProgressBarTimeout, 3000);
   }
