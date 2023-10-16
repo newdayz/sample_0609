@@ -174,12 +174,12 @@ btn_play.addEventListener("mouseover", () => {
   }
 });
 
- ProgressA.addEventListener("mouseover", () => {
+ProgressA.addEventListener("mouseover", () => {
   if (!VideoAElement.paused) {
     ProgressBar.style.display = "block";
     clearTimeout(timer);
   }
- });
+});
 
 // ProgressA.addEventListener("mouseout", () => {
 //   ProgressBar.style.display = "none";
@@ -382,11 +382,10 @@ if (isVideoABox) {
     btn_pause.addEventListener("touchstart", (event) => {
       event.preventDefault();
       btn_pauseClickhandler_a();
-      if (VideoAElement.paused) {
-        clearTimeout(touchTimer);
-      } else {
-        touchTimer = setTimeout(setProgressBarTimeout, 3000);
+      if (!VideoAElement.paused) {
+        ProgressBar.style.display = "block";
       }
+      console.log(event);
     });
 
     const btn_playClickhandler_a = () => {
@@ -407,53 +406,29 @@ if (isVideoABox) {
     btn_play.addEventListener("touchstart", (event) => {
       event.preventDefault();
       btn_playClickhandler_a();
-      if (!VideoAElement.paused) {
+      if (VideoAElement.paused) {
         touchTimer = setTimeout(setProgressBarTimeout, 3000);
-      } else {
-        clearTimeout(touchTimer);
       }
+      console.log(event);
     });
 
-    const btn_muteClickhandler_a = () => {
+    btn_mute.addEventListener("click", () => {
       if (VideoAElement.muted) {
         VideoAElement.muted = false;
         btn_mute.style.display = 'none';
         btn_unmute.style.display = 'block';
         console.log('Aミュートを解除しました');
       }
-    };
-    btn_mute.addEventListener("click", btn_muteClickhandler_a);
-
-    btn_mute.addEventListener("touchstart", (event) => {
-      event.preventDefault();
-      btn_muteClickhandler_a();
-      if (!VideoAElement.muted) {
-        touchTimer = setTimeout(setProgressBarTimeout, 3000);
-        if (VideoAElement.paused) {
-          clearTimeout(touchTimer);
-        }
-      }
     });
 
-    const btn_unmuteClickhandler_a = () => {
+    btn_unmute.addEventListener("click", () => {
       if (!VideoAElement.muted) {
         VideoAElement.muted = true;
         btn_unmute.style.display = 'none';
         btn_mute.style.display = 'block';
         console.log('Aミュートをクリックしました');
       }
-    };
-    btn_unmute.addEventListener("click", btn_unmuteClickhandler_a);
 
-    btn_unmute.addEventListener("touchstart", (event) => {
-      event.preventDefault();
-      btn_unmuteClickhandler_a();
-      if (VideoAElement.muted) {
-        touchTimer = setTimeout(setProgressBarTimeout, 3000);
-        if (VideoAElement.paused) {
-          clearTimeout(touchTimer);
-        }
-      }
     });
 
     const stopTimer = () => {
