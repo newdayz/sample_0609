@@ -713,7 +713,7 @@ ProgressB.addEventListener("touchstart", () => {
 
 ProgressB.addEventListener("touchmove", () => {
   ProgressBarB.style.display = "block";
-    clearTimeout(touchTimerB);
+  clearTimeout(touchTimerB);
 });
 
 ProgressB.addEventListener("touchend", () => {
@@ -798,8 +798,8 @@ if (isVideoBBox) {
     });
 
     const stopTimerB = () => {
-        clearInterval(playtimerB);
-        console.log('stopTimerB一時停止');
+      clearInterval(playtimerB);
+      console.log('stopTimerB一時停止');
     };
 
     ProgressB.addEventListener('input', () => {
@@ -1106,7 +1106,7 @@ ProgressC.addEventListener("touchstart", () => {
 
 ProgressC.addEventListener("touchmove", () => {
   ProgressBarC.style.display = "block";
-    clearTimeout(touchTimerC);
+  clearTimeout(touchTimerC);
 });
 
 ProgressC.addEventListener("touchend", () => {
@@ -1187,7 +1187,7 @@ VideoCElement.addEventListener('loadeddata', () => {
   });
 
   const stopTimerC = () => {
-      clearInterval(playtimerC);
+    clearInterval(playtimerC);
     console.log('stopTimerC一時停止');
   };
 
@@ -1505,7 +1505,7 @@ ProgressD.addEventListener("touchstart", () => {
 
 ProgressD.addEventListener("touchmove", () => {
   ProgressBarD.style.display = "block";
-    clearTimeout(touchTimerD);
+  clearTimeout(touchTimerD);
 });
 
 ProgressD.addEventListener("touchend", () => {
@@ -1926,7 +1926,7 @@ ProgressE.addEventListener("touchstart", () => {
 
 ProgressE.addEventListener("touchmove", () => {
   ProgressBarE.style.display = "block";
-    clearTimeout(touchTimerE);
+  clearTimeout(touchTimerE);
 });
 
 ProgressE.addEventListener("touchend", () => {
@@ -2043,21 +2043,12 @@ if (isVideoBoxE) {
 
       if (currentTimeE >= 256) {
         buttonE_Info.style.display = 'block';
-        const clickHandler_e_info = () => {
+        buttonE_Info.addEventListener("click", () => {
           if (isVideoVisibleE) {
-
             VideoEElement.pause();
             PauseBtnE.style.display = "none";
             PlayBtnE.style.display = "block";
-
-            console.log('buttonE_Infoをクリックしました');
           }
-        };
-        buttonE_Info.addEventListener("click", clickHandler_e_info);
-
-        buttonE_Info.addEventListener("touchstart", (event) => {
-          event.preventDefault();
-          clickHandler_e_info();
         });
       } else {
         buttonE_Info.style.display = 'none';
@@ -2065,14 +2056,13 @@ if (isVideoBoxE) {
 
       if (currentTimeE >= 256) {
         back_E_A.style.display = 'block';
-        const clickHandler_back_e_a = () => {
+        back_E_A.addEventListener("click", () => {
           if (isVideoVisibleE) {
             ClassE.style.zIndex = "25";
             VideoEElement.currentTime = 0;
             VideoEElement.pause();
             ProgressBarE.style.zIndex = "-25";
             ProgressBarE.style.display = "none";
-
 
             if (VideoEElement.muted) {
               VideoAElement.muted = true;
@@ -2087,15 +2077,7 @@ if (isVideoBoxE) {
             VideoAElement.play();
             ClassA.style.zIndex = "290";
             ProgressBar.style.zIndex = "291";
-
-            console.log('back_E_Aをクリックしました');
           }
-        };
-        back_E_A.addEventListener("click", clickHandler_back_e_a);
-
-        back_E_A.addEventListener("touchstart", (event) => {
-          event.preventDefault();
-          clickHandler_back_e_a();
         });
       } else {
         back_E_A.style.display = 'none';
@@ -2106,11 +2088,7 @@ if (isVideoBoxE) {
         PlayBtnE.style.display = "block";
         VideoEElement.pause();
       }
-
-      console.log('TimeUpDateE');
     });
-
-    console.log('LoadeddataE');
   });
 }
 
@@ -5765,7 +5743,7 @@ if (isVideoBoxO) {
       if (VideoOElement.muted) {
         VideoOElement.muted = false;
         MuteBtnO.style.display = 'none';
-        UnmuteBtnO.style.display = 'block';if (!VideoOElement.paused) {
+        UnmuteBtnO.style.display = 'block'; if (!VideoOElement.paused) {
           ProgressBarO.style.display = "none";
         } else {
           ProgressBarO.style.display = "block";
@@ -6168,13 +6146,11 @@ if (isVideoBoxP) {
       const seekTimeP = calculateSeekTimeP(ProgressP.value);
       if (!isNaN(seekTimeP) && isFinite(seekTimeP) && seekTimeP >= 0 && seekTimeP <= VideoPElement.duration) {
         VideoPElement.currentTime = seekTimeP;
-        console.log('Pプログレスバーを操作しました');
       }
     });
 
     ProgressP.addEventListener('change', () => {
       startTimerP();
-      console.log('Pプログレスバーの操作が完了しました');
     });
 
     const calculateSeekTimeP = (progressValue) => {
