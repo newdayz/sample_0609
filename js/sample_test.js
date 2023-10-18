@@ -219,13 +219,13 @@ function setProgressBarTimeout() {
 }
 let touchTimer = null;
 
-VideoAElement.addEventListener("touchstart", () => {
-  ProgressBar.style.display = "block";
+VideoAElement.addEventListener("touchstart", (e) => {
   if (!VideoAElement.paused) {
-    touchTimer = setTimeout(setProgressBarTimeout, 3000);
+    ProgressBar.style.display = "block";
   } else {
     clearTimeout(touchTimer);
   }
+  console.log(e);
 });
 
 btn_pause.addEventListener("touchstart", () => {
@@ -247,13 +247,8 @@ ProgressA.addEventListener("touchstart", () => {
 });
 
 ProgressA.addEventListener("touchmove", () => {
-  if (VideoAElement.paused) {
-    ProgressBar.style.display = "block";
-    clearTimeout(touchTimer);
-  } else {
-    ProgressBar.style.display = "block";
-    clearTimeout(touchTimer);
-  }
+  ProgressBar.style.display = "block";
+  clearTimeout(touchTimer);
 });
 
 ProgressA.addEventListener("touchend", () => {
@@ -261,7 +256,7 @@ ProgressA.addEventListener("touchend", () => {
     ProgressBar.style.display = "block";
     clearTimeout(touchTimer);
   } else {
-    touchTimer = setTimeout(setProgressBarTimeout, 3000);
+    ProgressBar.style.display = "none";
   }
 });
 
@@ -358,6 +353,11 @@ if (isVideoABox) {
         VideoAElement.muted = false;
         btn_mute.style.display = 'none';
         btn_unmute.style.display = 'block';
+        if (!VideoAElement.paused) {
+          ProgressBar.style.display = "none";
+        } else {
+          ProgressBar.style.display = "block";
+        }
         console.log('Aミュートを解除しました');
       }
     });
@@ -433,13 +433,9 @@ if (isVideoABox) {
         };
 
         buttonB.addEventListener("click", clickHandler_b);
-
         buttonB.addEventListener("touchstart", (event) => {
           event.preventDefault();
           clickHandler_b();
-          setTimeout(() => {
-            ProgressBar.style.display = "none";
-          }, 3000);
         });
       } else {
         buttonB.style.display = 'none';
@@ -478,9 +474,6 @@ if (isVideoABox) {
         buttonC.addEventListener("touchstart", (event) => {
           event.preventDefault();
           clickHandler_c();
-          setTimeout(() => {
-            ProgressBar.style.display = "none";
-          }, 3000);
         });
       } else {
         buttonC.style.display = 'none';
@@ -518,9 +511,6 @@ if (isVideoABox) {
         buttonD.addEventListener("touchstart", (event) => {
           event.preventDefault();
           clickHandler_d();
-          setTimeout(() => {
-            ProgressBar.style.display = "none";
-          }, 3000);
         });
       } else {
         buttonD.style.display = 'none';
@@ -559,9 +549,6 @@ if (isVideoABox) {
         buttonE.addEventListener("touchstart", (event) => {
           event.preventDefault();
           clickHandler_e();
-          setTimeout(() => {
-            ProgressBar.style.display = "none";
-          }, 3000);
         });
       } else {
         buttonE.style.display = 'none';
@@ -881,9 +868,6 @@ if (isVideoBBox) {
         buttonF.addEventListener("touchstart", (event) => {
           event.preventDefault();
           clickHandler_f();
-          setTimeout(() => {
-            ProgressBarB.style.display = "none";
-          }, 3000);
         });
       } else {
         buttonF.style.display = 'none';
@@ -922,9 +906,6 @@ if (isVideoBBox) {
         buttonG.addEventListener("touchstart", (event) => {
           event.preventDefault();
           clickHandler_g();
-          setTimeout(() => {
-            ProgressBarB.style.display = "none";
-          }, 3000);
         });
       } else {
         buttonG.style.display = 'none';
@@ -963,9 +944,6 @@ if (isVideoBBox) {
         back_B_A.addEventListener("touchstart", (event) => {
           event.preventDefault();
           clickHandler_back_b_a();
-          setTimeout(() => {
-            ProgressBarB.style.display = "none";
-          }, 3000);
         });
       } else {
         back_B_A.style.display = 'none';
@@ -1283,9 +1261,6 @@ VideoCElement.addEventListener('loadeddata', () => {
       buttonH.addEventListener("touchstart", (event) => {
         event.preventDefault();
         clickHandler_h();
-        setTimeout(() => {
-          ProgressBarC.style.display = "none";
-        }, 3000);
       });
     } else {
       buttonH.style.display = 'none';
@@ -1324,9 +1299,6 @@ VideoCElement.addEventListener('loadeddata', () => {
       buttonI.addEventListener("touchstart", (event) => {
         event.preventDefault();
         clickHandler_i();
-        setTimeout(() => {
-          ProgressBarC.style.display = "none";
-        }, 3000);
       });
     } else {
       buttonI.style.display = 'none';
@@ -1365,9 +1337,6 @@ VideoCElement.addEventListener('loadeddata', () => {
       back_C_A.addEventListener("touchstart", (event) => {
         event.preventDefault();
         clickHandler_back_c_a();
-        setTimeout(() => {
-          ProgressBarC.style.display = "none";
-        }, 3000);
       });
     } else {
       back_C_A.style.display = 'none';
@@ -1692,9 +1661,6 @@ VideoDElement.addEventListener('loadeddata', () => {
       buttonJ.addEventListener("touchstart", (event) => {
         event.preventDefault();
         clickHandler_j();
-        setTimeout(() => {
-          ProgressBarD.style.display = "none";
-        }, 3000);
       });
     } else {
       buttonJ.style.display = 'none';
@@ -1733,9 +1699,6 @@ VideoDElement.addEventListener('loadeddata', () => {
       buttonK.addEventListener("touchstart", (event) => {
         event.preventDefault();
         clickHandler_k();
-        setTimeout(() => {
-          ProgressBarD.style.display = "none";
-        }, 3000);
       });
     } else {
       buttonK.style.display = 'none';
@@ -1774,9 +1737,6 @@ VideoDElement.addEventListener('loadeddata', () => {
       buttonL.addEventListener("touchstart", (event) => {
         event.preventDefault();
         clickHandler_l();
-        setTimeout(() => {
-          ProgressBarD.style.display = "none";
-        }, 3000);
       });
     } else {
       buttonL.style.display = 'none';
@@ -1815,9 +1775,6 @@ VideoDElement.addEventListener('loadeddata', () => {
       back_D_A.addEventListener("touchstart", (event) => {
         event.preventDefault();
         clickHandler_back_d_a();
-        setTimeout(() => {
-          ProgressBarD.style.display = "none";
-        }, 3000);
       });
     } else {
       back_D_A.style.display = 'none';
@@ -2114,9 +2071,6 @@ if (isVideoBoxE) {
         buttonE_Info.addEventListener("touchstart", (event) => {
           event.preventDefault();
           clickHandler_e_info();
-          setTimeout(() => {
-            ProgressBarE.style.display = "none";
-          }, 3000);
         });
       } else {
         buttonE_Info.style.display = 'none';
@@ -2155,9 +2109,6 @@ if (isVideoBoxE) {
         back_E_A.addEventListener("touchstart", (event) => {
           event.preventDefault();
           clickHandler_back_e_a();
-          setTimeout(() => {
-            ProgressBarE.style.display = "none";
-          }, 3000);
         });
       } else {
         back_E_A.style.display = 'none';
@@ -2427,9 +2378,6 @@ if (isVideoBoxF) {
         buttonF_Info.addEventListener("touchstart", (event) => {
           event.preventDefault();
           clickHandler_f_info();
-          setTimeout(() => {
-            ProgressBarF.style.display = "none";
-          }, 3000);
         });
       } else {
         buttonF_Info.style.display = 'none';
@@ -2468,9 +2416,6 @@ if (isVideoBoxF) {
         opening_F_A.addEventListener("touchstart", (event) => {
           event.preventDefault();
           clickHandler_opening_f_a();
-          setTimeout(() => {
-            ProgressBarF.style.display = "none";
-          }, 3000);
         });
       } else {
         opening_F_A.style.display = 'none';
@@ -2512,9 +2457,6 @@ if (isVideoBoxF) {
         back_F_B.addEventListener("touchstart", (event) => {
           event.preventDefault();
           clickHandler_back_f_b();
-          setTimeout(() => {
-            ProgressBarF.style.display = "none";
-          }, 3000);
         });
       } else {
         back_F_B.style.display = 'none';
@@ -2783,9 +2725,6 @@ if (isVideoBoxG) {
         buttonG_Info.addEventListener("touchstart", (event) => {
           event.preventDefault();
           clickHandler_g_info();
-          setTimeout(() => {
-            ProgressBarG.style.display = "none";
-          }, 3000);
         });
       } else {
         buttonG_Info.style.display = 'none';
@@ -2824,9 +2763,6 @@ if (isVideoBoxG) {
         opening_G_A.addEventListener("touchstart", (event) => {
           event.preventDefault();
           clickHandler_opening_g_a();
-          setTimeout(() => {
-            ProgressBarG.style.display = "none";
-          }, 3000);
         });
       } else {
         opening_G_A.style.display = 'none';
@@ -2865,9 +2801,6 @@ if (isVideoBoxG) {
         back_G_B.addEventListener("touchstart", (event) => {
           event.preventDefault();
           clickHandler_back_g_b();
-          setTimeout(() => {
-            ProgressBarG.style.display = "none";
-          }, 3000);
         });
       } else {
         back_G_B.style.display = 'none';
@@ -3144,14 +3077,11 @@ if (isVideoBoxH) {
             console.log('buttonMをクリックしました');
           }
         };
-        buttonH.addEventListener("click", clickHandler_m);
+        buttonM.addEventListener("click", clickHandler_m);
 
-        buttonH.addEventListener("touchstart", (event) => {
+        buttonM.addEventListener("touchstart", (event) => {
           event.preventDefault();
           clickHandler_m();
-          setTimeout(() => {
-            ProgressBarH.style.display = "none";
-          }, 3000);
         });
       } else {
         buttonM.style.display = 'none';
@@ -3190,9 +3120,6 @@ if (isVideoBoxH) {
         buttonN.addEventListener("touchstart", (event) => {
           event.preventDefault();
           clickHandler_n();
-          setTimeout(() => {
-            ProgressBarH.style.display = "none";
-          }, 3000);
         });
       } else {
         buttonN.style.display = 'none';
@@ -3231,9 +3158,6 @@ if (isVideoBoxH) {
         back_H_C.addEventListener("touchstart", (event) => {
           event.preventDefault();
           clickHandler_back_h_c();
-          setTimeout(() => {
-            ProgressBarH.style.display = "none";
-          }, 3000);
         });
       } else {
         back_H_C.style.display = 'none';
@@ -3516,9 +3440,6 @@ if (isVideoBoxI) {
         buttonO.addEventListener("touchstart", (event) => {
           event.preventDefault();
           clickHandler_o();
-          setTimeout(() => {
-            ProgressBarI.style.display = "none";
-          }, 3000);
         });
       } else {
         buttonO.style.display = 'none';
@@ -3557,9 +3478,6 @@ if (isVideoBoxI) {
         buttonP.addEventListener("touchstart", (event) => {
           event.preventDefault();
           clickHandler_p();
-          setTimeout(() => {
-            ProgressBarI.style.display = "none";
-          }, 3000);
         });
       } else {
         buttonP.style.display = 'none';
@@ -3598,9 +3516,6 @@ if (isVideoBoxI) {
         back_I_C.addEventListener("touchstart", (event) => {
           event.preventDefault();
           clickHandler_back_i_c();
-          setTimeout(() => {
-            ProgressBarI.style.display = "none";
-          }, 3000);
         });
       } else {
         back_I_C.style.display = 'none';
@@ -3864,9 +3779,6 @@ if (isVideoBoxJ) {
         buttonJ_Info.addEventListener("touchstart", (event) => {
           event.preventDefault();
           clickHandler_j_info();
-          setTimeout(() => {
-            ProgressBarJ.style.display = "none";
-          }, 3000);
         });
       } else {
         buttonJ_Info.style.display = 'none';
@@ -3905,9 +3817,6 @@ if (isVideoBoxJ) {
         opening_J_A.addEventListener("touchstart", (event) => {
           event.preventDefault();
           clickHandler_opening_j_a();
-          setTimeout(() => {
-            ProgressBarJ.style.display = "none";
-          }, 3000);
         });
       } else {
         opening_J_A.style.display = 'none';
@@ -3946,9 +3855,6 @@ if (isVideoBoxJ) {
         back_J_D.addEventListener("touchstart", (event) => {
           event.preventDefault();
           clickHandler_back_j_d();
-          setTimeout(() => {
-            ProgressBarJ.style.display = "none";
-          }, 3000);
         });
       } else {
         back_J_D.style.display = 'none';
@@ -4216,9 +4122,6 @@ if (isVideoBoxK) {
         buttonK_Info.addEventListener("touchstart", (event) => {
           event.preventDefault();
           clickHandler_k_info();
-          setTimeout(() => {
-            ProgressBarK.style.display = "none";
-          }, 3000);
         });
       } else {
         buttonK_Info.style.display = 'none';
@@ -4257,9 +4160,6 @@ if (isVideoBoxK) {
         opening_K_A.addEventListener("touchstart", (event) => {
           event.preventDefault();
           clickHandler_opening_k_a();
-          setTimeout(() => {
-            ProgressBarK.style.display = "none";
-          }, 3000);
         });
       } else {
         opening_K_A.style.display = 'none';
@@ -4298,9 +4198,6 @@ if (isVideoBoxK) {
         back_K_D.addEventListener("touchstart", (event) => {
           event.preventDefault();
           clickHandler_back_K_d();
-          setTimeout(() => {
-            ProgressBarK.style.display = "none";
-          }, 3000);
         });
       } else {
         back_K_D.style.display = 'none';
@@ -4563,9 +4460,6 @@ if (isVideoBoxL) {
         buttonL_Info.addEventListener("touchstart", (event) => {
           event.preventDefault();
           clickHandler_l_info();
-          setTimeout(() => {
-            ProgressBarL.style.display = "none";
-          }, 3000);
         });
       } else {
         buttonL_Info.style.display = 'none';
@@ -4604,9 +4498,6 @@ if (isVideoBoxL) {
         opening_L_A.addEventListener("touchstart", (event) => {
           event.preventDefault();
           clickHandler_opening_l_a();
-          setTimeout(() => {
-            ProgressBarL.style.display = "none";
-          }, 3000);
         });
       } else {
         opening_L_A.style.display = 'none';
@@ -4645,9 +4536,6 @@ if (isVideoBoxL) {
         back_L_D.addEventListener("touchstart", (event) => {
           event.preventDefault();
           clickHandler_back_l_d();
-          setTimeout(() => {
-            ProgressBarL.style.display = "none";
-          }, 3000);
         });
       } else {
         back_L_D.style.display = 'none';
@@ -4915,9 +4803,6 @@ if (isVideoBoxM) {
         buttonM_Info.addEventListener("touchstart", (event) => {
           event.preventDefault();
           clickHandler_m_info();
-          setTimeout(() => {
-            ProgressBarM.style.display = "none";
-          }, 3000);
         });
       } else {
         buttonM_Info.style.display = 'none';
@@ -4956,9 +4841,6 @@ if (isVideoBoxM) {
         opening_M_A.addEventListener("touchstart", (event) => {
           event.preventDefault();
           clickHandler_opening_m_a();
-          setTimeout(() => {
-            ProgressBarM.style.display = "none";
-          }, 3000);
         });
       } else {
         opening_M_A.style.display = 'none';
@@ -4997,9 +4879,6 @@ if (isVideoBoxM) {
         back_M_H.addEventListener("touchstart", (event) => {
           event.preventDefault();
           clickHandler_back_m_h();
-          setTimeout(() => {
-            ProgressBarM.style.display = "none";
-          }, 3000);
         });
       } else {
         back_M_H.style.display = 'none';
@@ -5267,9 +5146,6 @@ if (isVideoBoxN) {
         buttonN_Info.addEventListener("touchstart", (event) => {
           event.preventDefault();
           clickHandler_n_info();
-          setTimeout(() => {
-            ProgressBarN.style.display = "none";
-          }, 3000);
         });
       } else {
         buttonN_Info.style.display = 'none';
@@ -5308,9 +5184,6 @@ if (isVideoBoxN) {
         opening_N_A.addEventListener("touchstart", (event) => {
           event.preventDefault();
           clickHandler_opening_n_a();
-          setTimeout(() => {
-            ProgressBarN.style.display = "none";
-          }, 3000);
         });
       } else {
         opening_N_A.style.display = 'none';
@@ -5349,9 +5222,6 @@ if (isVideoBoxN) {
         back_N_H.addEventListener("touchstart", (event) => {
           event.preventDefault();
           clickHandler_back_n_h();
-          setTimeout(() => {
-            ProgressBarN.style.display = "none";
-          }, 3000);
         });
       } else {
         back_N_H.style.display = 'none';
@@ -5619,9 +5489,6 @@ if (isVideoBoxO) {
         buttonO_Info.addEventListener("touchstart", (event) => {
           event.preventDefault();
           clickHandler_o_info();
-          setTimeout(() => {
-            ProgressBarO.style.display = "none";
-          }, 3000);
         });
       } else {
         buttonO_Info.style.display = 'none';
@@ -5660,9 +5527,6 @@ if (isVideoBoxO) {
         opening_O_A.addEventListener("touchstart", (event) => {
           event.preventDefault();
           clickHandler_opening_o_a();
-          setTimeout(() => {
-            ProgressBarO.style.display = "none";
-          }, 3000);
         });
       } else {
         opening_O_A.style.display = 'none';
@@ -5701,9 +5565,6 @@ if (isVideoBoxO) {
         back_O_I.addEventListener("touchstart", (event) => {
           event.preventDefault();
           clickHandler_back_o_i();
-          setTimeout(() => {
-            ProgressBarO.style.display = "none";
-          }, 3000);
         });
       } else {
         back_O_I.style.display = 'none';
@@ -5971,9 +5832,6 @@ if (isVideoBoxP) {
         buttonP_Info.addEventListener("touchstart", (event) => {
           event.preventDefault();
           clickHandler_p_info();
-          setTimeout(() => {
-            ProgressBarP.style.display = "none";
-          }, 3000);
         });
       } else {
         buttonP_Info.style.display = 'none';
@@ -6012,9 +5870,6 @@ if (isVideoBoxP) {
         opening_P_A.addEventListener("touchstart", (event) => {
           event.preventDefault();
           clickHandler_opening_p_a();
-          setTimeout(() => {
-            ProgressBarP.style.display = "none";
-          }, 3000);
         });
       } else {
         opening_P_A.style.display = 'none';
@@ -6053,9 +5908,6 @@ if (isVideoBoxP) {
         back_P_I.addEventListener("touchstart", (event) => {
           event.preventDefault();
           clickHandler_back_p_i();
-          setTimeout(() => {
-            ProgressBarP.style.display = "none";
-          }, 3000);
         });
       } else {
         back_P_I.style.display = 'none';
