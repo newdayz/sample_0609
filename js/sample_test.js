@@ -2056,7 +2056,7 @@ if (isVideoBoxE) {
         buttonE_Info.addEventListener("click", clickHandler_e_info);
 
         buttonE_Info.addEventListener("touchstart", (event) => {
-          event.preventDefault();
+          // event.preventDefault();
           clickHandler_e_info();
         });
       } else {
