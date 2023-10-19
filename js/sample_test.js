@@ -2032,7 +2032,6 @@ if (isVideoBoxE) {
       PlayTimeE.textContent = convertTime(VideoEElement.currentTime);
       EndTimeE.textContent = convertTime(VideoEElement.duration);
 
-
       if (currentTimeE >= 256) {
         buttonE_Info.style.display = 'block';
         buttonE_Info.addEventListener("click", () => {
@@ -2383,16 +2382,9 @@ if (isVideoBoxF) {
               PlayBtnF.style.display = "block";
               ProgressBarF.style.display = "block";
             }
-            console.log('buttonF_Infoをクリックしました');
           }
+          console.log('buttonF_Infoをクリックしました');
         });
-
-        // buttonF_Info.addEventListener("click", clickHandler_f_info);
-
-        // buttonF_Info.addEventListener("touchstart", (event) => {
-        //   event.preventDefault();
-        //   clickHandler_f_info();
-        // });
       } else {
         buttonF_Info.style.display = 'none';
       }
@@ -2456,10 +2448,7 @@ if (isVideoBoxF) {
               MuteBtnB.style.display = "none";
             }
 
-            VideoBElement.muted = false;
             VideoBElement.play();
-            UnmuteBtnB.style.display = "block";
-            MuteBtnB.style.display = "none";
             ClassB.style.zIndex = "290";
             ProgressBarB.style.zIndex = "291";
 
@@ -2757,23 +2746,16 @@ if (isVideoBoxG) {
 
       if (currentTimeG >= 183) {
         buttonG_Info.style.display = 'block';
-        const clickHandler_g_info = () => {
+        buttonG_Info.addEventListener("click", () => {
           if (isVideoVisibleG) {
-
             VideoGElement.pause();
-            if (VideoGElement.pause) {
+            if (VideoGElement.paused) {
               PlayBtnG.style.display = "block";
               PauseBtnG.style.display = "none";
+              ProgressBarG.style.display = "block";
             }
-
             console.log('buttonG_Infoをクリックしました');
           }
-        };
-        buttonG_Info.addEventListener("click", clickHandler_g_info);
-
-        buttonG_Info.addEventListener("touchstart", (event) => {
-          event.preventDefault();
-          clickHandler_g_info();
         });
       } else {
         buttonG_Info.style.display = 'none';
@@ -3142,7 +3124,6 @@ if (isVideoBoxH) {
             VideoHElement.pause();
             ProgressBarH.style.zIndex = "-22";
             ProgressBarH.style.display = "none";
-
 
             if (VideoHElement.muted) {
               VideoMElement.muted = true;
@@ -3918,22 +3899,17 @@ if (isVideoBoxJ) {
 
       if (currentTimeJ >= 186) {
         buttonJ_Info.style.display = 'block';
-        const clickHandler_j_info = () => {
+        buttonJ_Info.addEventListener("click", () => {
           if (isVideoVisibleJ) {
-
             VideoJElement.pause();
-            PauseBtnJ.style.display = "none";
-            PlayBtnJ.style.display = "block";
-
-            console.log('buttonJ_Info');
+            if (VideoJElement.paused) {
+              PauseBtnJ.style.display = "none";
+              PlayBtnJ.style.display = "block";
+              ProgressBarJ.style.display = "block";
+            }
           }
-        };
-        buttonJ_Info.addEventListener("click", clickHandler_j_info);
-
-        buttonJ_Info.addEventListener("touchstart", (event) => {
-          event.preventDefault();
-          clickHandler_j_info();
         });
+        console.log('buttonJ_Info');
       } else {
         buttonJ_Info.style.display = 'none';
       }
@@ -4297,20 +4273,16 @@ if (isVideoBoxK) {
 
       if (currentTimeK >= 152) {
         buttonK_Info.style.display = 'block';
-        const clickHandler_k_info = () => {
+        buttonK_Info.addEventListener("click", () => {
           if (isVideoVisibleK) {
-
             VideoKElement.pause();
-            PauseBtnK.style.display = "none";
-            PlayBtnK.style.display = "block";
-            console.log('buttonK_Info');
+            if (VideoKElement.paused) {
+              PauseBtnK.style.display = "none";
+              PlayBtnK.style.display = "block";
+              ProgressBarK.style.display = "block";
+            }
           }
-        };
-        buttonK_Info.addEventListener("click", clickHandler_k_info);
-
-        buttonK_Info.addEventListener("touchstart", (event) => {
-          event.preventDefault();
-          clickHandler_k_info();
+          console.log('buttonK_Info');
         });
       } else {
         buttonK_Info.style.display = 'none';
@@ -4669,20 +4641,16 @@ if (isVideoBoxL) {
 
       if (currentTimeL >= 172) {
         buttonL_Info.style.display = 'block';
-        const clickHandler_l_info = () => {
+        buttonL_Info.addEventListener("click", () => {
           if (isVideoVisibleL) {
-
             VideoLElement.pause();
-            PauseBtnL.style.display = "none";
-            PlayBtnL.style.display = "block";
-            console.log('buttonL_Info');
+            if (VideoLElement.paused) {
+              PauseBtnL.style.display = "none";
+              PlayBtnL.style.display = "block";
+              ProgressBarL.style.display = "block";
+            }
           }
-        };
-        buttonL_Info.addEventListener("click", clickHandler_l_info);
-
-        buttonL_Info.addEventListener("touchstart", (event) => {
-          event.preventDefault();
-          clickHandler_l_info();
+          console.log('buttonL_Info');
         });
       } else {
         buttonL_Info.style.display = 'none';
@@ -5425,20 +5393,16 @@ if (isVideoBoxN) {
 
       if (currentTimeN >= 278) {
         buttonN_Info.style.display = 'block';
-        const clickHandler_n_info = () => {
+        buttonN_Info.addEventListener("click", () => {
           if (isVideoVisibleN) {
-
             VideoNElement.pause();
-            PauseBtnN.style.display = "none";
-            PlayBtnN.style.display = "block";
-            console.log('buttonN_Info');
+            if (VideoNElement.paused) {
+              PauseBtnN.style.display = "none";
+              PlayBtnN.style.display = "block";
+              ProgressBarN.style.display = "block";
+            }
           }
-        };
-        buttonN_Info.addEventListener("click", clickHandler_n_info);
-
-        buttonN_Info.addEventListener("touchstart", (event) => {
-          event.preventDefault();
-          clickHandler_n_info();
+          console.log('buttonN_Info');
         });
       } else {
         buttonN_Info.style.display = 'none';
@@ -5802,20 +5766,16 @@ if (isVideoBoxO) {
 
       if (currentTimeO >= 146) {
         buttonO_Info.style.display = 'block';
-        const clickHandler_o_info = () => {
+        buttonO_Info.addEventListener("click", () => {
           if (isVideoVisibleO) {
-
             VideoOElement.pause();
-            PauseBtnO.style.display = "none";
-            PlayBtnO.style.display = "block";
-            console.log('buttonO_Info');
+            if (VideoOElement.paused) {
+              PauseBtnO.style.display = "none";
+              PlayBtnO.style.display = "block";
+              ProgressBarO.style.display = "block";
+            }
           }
-        };
-        buttonO_Info.addEventListener("click", clickHandler_o_info);
-
-        buttonO_Info.addEventListener("touchstart", (event) => {
-          event.preventDefault();
-          clickHandler_o_info();
+          console.log('buttonO_Info');
         });
       } else {
         buttonO_Info.style.display = 'none';
@@ -6178,20 +6138,16 @@ if (isVideoBoxP) {
 
       if (currentTimeP >= 240) {
         buttonP_Info.style.display = 'block';
-        const clickHandler_p_info = () => {
+        buttonP_Info.addEventListener("click", () => {
           if (isVideoVisibleP) {
-
             VideoPElement.pause();
-            PauseBtnP.style.display = "none";
-            PlayBtnP.style.display = "block";
-            console.log('buttonP_Info');
+            if (VideoPElement.paused) {
+              PauseBtnP.style.display = "none";
+              PlayBtnP.style.display = "block";
+              ProgressBarP.style.display = "block";
+            }
           }
-        };
-        buttonP_Info.addEventListener("click", clickHandler_p_info);
-
-        buttonP_Info.addEventListener("touchstart", (event) => {
-          event.preventDefault();
-          clickHandler_p_info();
+          console.log('buttonP_Info');
         });
       } else {
         buttonP_Info.style.display = 'none';
