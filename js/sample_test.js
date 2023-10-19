@@ -5015,21 +5015,17 @@ if (isVideoBoxM) {
 
       if (currentTimeM >= 267) {
         buttonM_Info.style.display = 'block';
-        const clickHandler_m_info = () => {
+        buttonM_Info.addEventListener("click", () => {
           if (isVideoVisibleM) {
-
             VideoMElement.pause();
-            PauseBtnM.style.display = "none";
-            PlayBtnM.style.display = "block";
-            console.log('buttonM_Info');
+            if (VideoMElement.paused) {
+              PauseBtnM.style.display = "none";
+              PlayBtnM.style.display = "block";
+              ProgressBarM.style.display = "block";
+            }
           }
-        };
-        buttonM_Info.addEventListener("click", clickHandler_m_info);
-
-        buttonM_Info.addEventListener("touchstart", (event) => {
-          event.preventDefault();
-          clickHandler_m_info();
-        });
+          console.log('buttonM_Info');
+        }); 
       } else {
         buttonM_Info.style.display = 'none';
       }
