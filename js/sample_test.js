@@ -2035,44 +2035,17 @@ if (isVideoBoxE) {
 
       if (currentTimeE >= 256) {
         buttonE_Info.style.display = 'block';
-        const clickHandler_e_info = () => {
+        buttonE_Info.addEventListener("click", () => {
           if (isVideoVisibleE) {
             VideoEElement.pause();
-            PauseBtnE.style.display = "none";
-            PlayBtnE.style.display = "block";
-            ProgressBarE.style.display = "block";
+            if (VideoEElement.paused) {
+              PauseBtnE.style.display = "none";
+              PlayBtnE.style.display = "block";
+              ProgressBarE.style.display = "block";
+            }
           }
+        });
           console.log("e_info_クリック");
-        };
-        buttonE_Info.addEventListener("click", clickHandler_e_info);
-
-        const openLinkOnTouch = () => {
-          const linkUrl = 'https://ws.formzu.net/dist/S712216565/';
-
-          window.open(linkUrl, '_blank');
-        }
-
-        let linkOpened = false;
-
-        buttonE_Info.addEventListener("touchstart", (event) => {
-          if (!linkOpened) {
-            event.preventDefault();
-            openLinkOnTouch();
-            linkOpened = true;
-
-            stopTimerE();
-            VideoEElement.pause();
-            PauseBtnE.style.display = "none";
-            PlayBtnE.style.display = "block";
-            ProgressBarE.style.display = "block";
-          }
-          console.log("e_info_タッチスタート");
-        });
-
-        buttonE_Info.addEventListener("touchend", () => {
-          startTimerE();
-          console.log("e_infoタッチエンド");
-        });
       } else {
         buttonE_Info.style.display = 'none';
       }
@@ -2405,7 +2378,7 @@ if (isVideoBoxF) {
         buttonF_Info.addEventListener("click", () => {
           if (isVideoVisibleF) {
             VideoFElement.pause();
-            if (VideoFElement.pause) {
+            if (VideoFElement.paused) {
               PauseBtnF.style.display = "none";
               PlayBtnF.style.display = "block";
               ProgressBarF.style.display = "block";
