@@ -1891,13 +1891,13 @@ back_E_A.addEventListener("mouseout", () => {
 
 let touchTimerE = null;
 
-VideoEElement.addEventListener("touchstart", () => {
-  if (!VideoEElement.paused) {
-    ProgressBarE.style.display = "block";
-  } else {
-    clearTimeout(touchTimerE);
-  }
-});
+// VideoEElement.addEventListener("touchstart", () => {
+//   if (!VideoEElement.paused) {
+//     ProgressBarE.style.display = "block";
+//   } else {
+//     clearTimeout(touchTimerE);
+//   }
+// });
 
 PauseBtnE.addEventListener("touchstart", () => {
   ProgressBarE.style.display = "block";
