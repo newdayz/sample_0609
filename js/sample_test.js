@@ -306,10 +306,7 @@ if (isVideoABox) {
 
     function resizeFix() {
       const windowWidth = document.documentElement.clientWidth;
-      console.log(window.innerWidth);
-      console.log(windowWidth);
       const windowHeight = document.documentElement.clientHeight;
-      console.log(windowHeight);
 
       const aspectRatio = 16 / 9;
 
@@ -713,7 +710,7 @@ ProgressB.addEventListener("touchstart", () => {
 
 ProgressB.addEventListener("touchmove", () => {
   ProgressBarB.style.display = "block";
-    clearTimeout(touchTimerB);
+  clearTimeout(touchTimerB);
 });
 
 ProgressB.addEventListener("touchend", () => {
@@ -798,8 +795,8 @@ if (isVideoBBox) {
     });
 
     const stopTimerB = () => {
-        clearInterval(playtimerB);
-        console.log('stopTimerB一時停止');
+      clearInterval(playtimerB);
+      console.log('stopTimerB一時停止');
     };
 
     ProgressB.addEventListener('input', () => {
@@ -1106,7 +1103,7 @@ ProgressC.addEventListener("touchstart", () => {
 
 ProgressC.addEventListener("touchmove", () => {
   ProgressBarC.style.display = "block";
-    clearTimeout(touchTimerC);
+  clearTimeout(touchTimerC);
 });
 
 ProgressC.addEventListener("touchend", () => {
@@ -1187,7 +1184,7 @@ VideoCElement.addEventListener('loadeddata', () => {
   });
 
   const stopTimerC = () => {
-      clearInterval(playtimerC);
+    clearInterval(playtimerC);
     console.log('stopTimerC一時停止');
   };
 
@@ -1505,7 +1502,7 @@ ProgressD.addEventListener("touchstart", () => {
 
 ProgressD.addEventListener("touchmove", () => {
   ProgressBarD.style.display = "block";
-    clearTimeout(touchTimerD);
+  clearTimeout(touchTimerD);
 });
 
 ProgressD.addEventListener("touchend", () => {
@@ -1926,7 +1923,7 @@ ProgressE.addEventListener("touchstart", () => {
 
 ProgressE.addEventListener("touchmove", () => {
   ProgressBarE.style.display = "block";
-    clearTimeout(touchTimerE);
+  clearTimeout(touchTimerE);
 });
 
 ProgressE.addEventListener("touchend", () => {
@@ -1971,7 +1968,6 @@ if (isVideoBoxE) {
         PauseBtnE.style.display = 'none';
         PlayBtnE.style.display = 'block';
       }
-      console.log('E一時停止をクリックしました');
     });
 
     PlayBtnE.addEventListener('click', () => {
@@ -1982,7 +1978,6 @@ if (isVideoBoxE) {
         PauseBtnE.style.display = 'block';
         ProgressBarE.style.display = "none";
       }
-      console.log('再生Eアイコンをクリックしました');
     });
 
 
@@ -1997,7 +1992,6 @@ if (isVideoBoxE) {
           ProgressBarE.style.display = "block";
         }
       }
-      console.log('Bミュートを解除しました');
     });
 
     UnmuteBtnE.addEventListener('click', () => {
@@ -2006,12 +2000,10 @@ if (isVideoBoxE) {
         UnmuteBtnE.style.display = 'none';
         MuteBtnE.style.display = 'block';
       }
-      console.log('Eミュートをクリックしました');
     });
 
     const stopTimerE = () => {
       clearInterval(playtimerE);
-      console.log('stopTimerE');
     };
 
     ProgressE.addEventListener('input', () => {
@@ -2045,19 +2037,41 @@ if (isVideoBoxE) {
         buttonE_Info.style.display = 'block';
         const clickHandler_e_info = () => {
           if (isVideoVisibleE) {
-
             VideoEElement.pause();
             PauseBtnE.style.display = "none";
             PlayBtnE.style.display = "block";
-
-            console.log('buttonE_Infoをクリックしました');
+            ProgressBarE.style.display = "block";
           }
+          console.log("e_info_クリック");
         };
         buttonE_Info.addEventListener("click", clickHandler_e_info);
 
+        const openLinkOnTouch = () => {
+          const linkUrl = 'https://ws.formzu.net/dist/S712216565/';
+
+          window.open(linkUrl, '_blank');
+        }
+
+        let linkOpened = false;
+
         buttonE_Info.addEventListener("touchstart", (event) => {
-          // event.preventDefault();
-          clickHandler_e_info();
+          if (!linkOpened) {
+            event.preventDefault();
+            openLinkOnTouch();
+            linkOpened = true;
+
+            stopTimerE();
+            VideoEElement.pause();
+            PauseBtnE.style.display = "none";
+            PlayBtnE.style.display = "block";
+            ProgressBarE.style.display = "block";
+          }
+          console.log("e_info_タッチスタート");
+        });
+
+        buttonE_Info.addEventListener("touchend", () => {
+          startTimerE();
+          console.log("e_infoタッチエンド");
         });
       } else {
         buttonE_Info.style.display = 'none';
@@ -2096,6 +2110,7 @@ if (isVideoBoxE) {
         back_E_A.addEventListener("touchstart", (event) => {
           event.preventDefault();
           clickHandler_back_e_a();
+          console.log("back_e_aタッチスタート");
         });
       } else {
         back_E_A.style.display = 'none';
@@ -2387,24 +2402,24 @@ if (isVideoBoxF) {
 
       if (currentTimeF >= 338) {
         buttonF_Info.style.display = 'block';
-        const clickHandler_f_info = () => {
+        buttonF_Info.addEventListener("click", () => {
           if (isVideoVisibleF) {
-
             VideoFElement.pause();
             if (VideoFElement.pause) {
               PauseBtnF.style.display = "none";
               PlayBtnF.style.display = "block";
+              ProgressBarF.style.display = "block";
             }
-
             console.log('buttonF_Infoをクリックしました');
           }
-        };
-        buttonF_Info.addEventListener("click", clickHandler_f_info);
-
-        buttonF_Info.addEventListener("touchstart", (event) => {
-          event.preventDefault();
-          clickHandler_f_info();
         });
+
+        // buttonF_Info.addEventListener("click", clickHandler_f_info);
+
+        // buttonF_Info.addEventListener("touchstart", (event) => {
+        //   event.preventDefault();
+        //   clickHandler_f_info();
+        // });
       } else {
         buttonF_Info.style.display = 'none';
       }
@@ -5765,7 +5780,7 @@ if (isVideoBoxO) {
       if (VideoOElement.muted) {
         VideoOElement.muted = false;
         MuteBtnO.style.display = 'none';
-        UnmuteBtnO.style.display = 'block';if (!VideoOElement.paused) {
+        UnmuteBtnO.style.display = 'block'; if (!VideoOElement.paused) {
           ProgressBarO.style.display = "none";
         } else {
           ProgressBarO.style.display = "block";
